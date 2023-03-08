@@ -1,0 +1,40 @@
+{% extends 'baseBackoffice.html.twig' %}
+
+{% block title %}Backoffice CSE St Vincent{% endblock %}
+
+{% block body %}
+    <div class="page" style=" display: flex; flex-direction: column; justify-content: space-evenly; align-items:center ; height: 711px;">
+
+        <h1 style="font-size: 31px;">Liste des Administrateurs</h1>
+        
+        <table class="table" style=" position: relative; top: -110px; width: 50%">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Email</th>
+                    <th>Roles</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+            <tbody>
+            {% for user in users %}
+                <tr>
+                    <td style="width:50px">{{ user.id }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
+                    <td>
+                        <a href="{{ path('app_user_show', {'id': user.id}) }}">Détails</a>
+                        <a href="{{ path('app_user_edit', {'id': user.id}) }}">Modifier</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="5">Aucun Administrateurs n'a été trouvé. Créer en un.</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <a class="btn" href="{{ path('app_user_new') }}">Créer un Administrateur</a>
+    </div>
+{% endblock %}
