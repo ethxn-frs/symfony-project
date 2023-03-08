@@ -47,7 +47,7 @@ class LoginAuthentificatorAuthenticator extends AbstractLoginFormAuthenticator
         }
 
         // For example:
-        return new RedirectResponse($this->urlGenerator->generate('backoffice'));
+        return new RedirectResponse($this->urlGenerator->generate('app_backoffice'));
     }
 
     protected function getLoginUrl(Request $request): string
