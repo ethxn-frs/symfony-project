@@ -5,13 +5,14 @@
 {% block body %}
 
 <style>
-form{
-  border: solid 2px #1B3168;
-  padding: 150px 70px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
+.loginform{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 56px;
+    margin-top: 79px;
 }
 input{
   width: 300px;
@@ -23,7 +24,7 @@ label{
   font-size: 24px;
   color: #1B3168;
 }
-input{
+.input{
   width: 300px;
   height: 40px;
   border: solid 2px white;
@@ -44,35 +45,33 @@ input{
   border:  solid 2px #1B3168;;
 }
 </style>
-<div class="page" style=" height: 711px; display:flex ; justify-content: center ; align-items: center">
-    <form method="post">
-        <h3 style=" color: #1B3168; font-size: 3em ; top: -90px ; position: relative ;">Connexion</h3>
+{# <div class="page" style=" height: 711px; display:flex ; justify-content: center ; align-items: center"> #}
+    <form class="loginform" method="post">
+        <h3 style=" color: #1B3168; font-size: 3em ;">Connexion</h3>
         <div class="inputs" style="display:grid ; gap:40px ;">
             <div class="inputForm">
                 <label for="inputEmail">email :</label>
-                <input placeholder="Renseigner votre adresse mail" type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus >
+                <input class="input" placeholder="Renseigner votre adresse mail" type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus >
             </div>
             <div class="inputForm">
                 <label for="inputPassword">mot de passe :</label>
-                <input placeholder="Renseigner votre mot de passe" type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+                <input class="input" placeholder="Renseigner votre mot de passe" type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
             </div>
 
             <input type="hidden" name="_csrf_token"
                 value="{{ csrf_token('authenticate') }}"
             >
         </div>
-        {#
-            Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-            See https://symfony.com/doc/current/security/remember_me.html
 
-            <div class="checkbox mb-3">
-                <label>
-                    <input type="checkbox" name="_remember_me"> Remember me
-                </label>
+            {# Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+            See https://symfony.com/doc/current/security/remember_me.html #}
+
+            <div class="rememberMe">
+                <input style="width: 20px; height: 20px;" type="checkbox" name="_remember_me">
+                <label>Remember me</label>
             </div>
-        #}
 
-        <div class="buttons" style=" display: flex; position: relative; top: 40px; gap: 20px;" >
+        <div class="buttons" style=" display: flex; gap: 20px" >
             <a href="\" class="btn">
                 Retour
             </a>
