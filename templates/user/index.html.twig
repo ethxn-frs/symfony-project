@@ -3,37 +3,68 @@
 {% block title %}Backoffice CSE St Vincent{% endblock %}
 
 {% block body %}
-    <div class="page" style=" display: flex; flex-direction: column; justify-content: space-evenly; align-items:center ; height: 711px;">
+    <style>
+    .btn{
+    cursor: pointer;
+    color: #1B3168;
+    border: solid 2px #1B3168;
+    padding: 10px 30px;
+    border-radius: 5px;
+    background-color: white;
+    font-size: 17px;
+    }
+    .btn:hover{
+    background-color: #1B3168;
+    color: white;
+    border:  solid 2px #1B3168;
+    transition: 400ms;
+    }
+    </style>
+    <div class="backoffice d-flex direction-column">
 
-        <h1 style="font-size: 31px;">Liste des Administrateurs</h1>
+        <h1>Liste des Administrateurs</h1>
         
-        <table class="table" style=" position: relative; top: -110px; width: 50%">
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Email</th>
-                    <th>Roles</th>
-                    <th>Actions</th>
-                </tr>
-                </thead>
-            <tbody>
-            {% for user in users %}
-                <tr>
-                    <td style="width:50px">{{ user.id }}</td>
-                    <td>{{ user.email }}</td>
-                    <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
-                    <td>
-                        <a href="{{ path('app_user_show', {'id': user.id}) }}">Détails</a>
-                        <a href="{{ path('app_user_edit', {'id': user.id}) }}">Modifier</a>
-                    </td>
-                </tr>
-            {% else %}
-                <tr>
-                    <td colspan="5">Aucun Administrateurs n'a été trouvé. Créer en un.</td>
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
+        <div class="array container">
+            <div class="header-array">
+                <div class="d-flex">
+                    <div class="col">
+                        <h3>ID</h3>
+                    </div>
+                    <div class="col">
+                        <h3>Email</h3>
+                    </div>
+                    <div class="col">
+                        <h3>Roles</h3>
+                    </div>
+                    <div class="col">
+                        <h3>Action</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="body-array">
+                {% for user in users %}
+                <div class="d-flex">
+                    <div class="col">
+                        <p>{{ user.id }}</p>
+                    </div>
+                    <div class="col">
+                        <p>{{ user.email }}</p>
+                    </div>
+                    <div class="col">
+                        <p>{{ user.roles ? user.roles|json_encode : '' }}</p>
+                    </div>
+                    <div class="col d-flex justify-start">
+                        <a class="btn" href="{{ path('app_user_show', {'id': user.id}) }}">Détails</a>
+                        <a class="btn" href="{{ path('app_user_edit', {'id': user.id}) }}">Modifier</a>
+                    </div>
+                </div>
+                {% else %}
+                    <tr>
+                        <td colspan="5">Aucun Administrateurs n'a été trouvé. Créer en un.</td>
+                    </tr>
+                {% endfor %}
+            </div>
+        </div>
 
         <a class="btn" href="{{ path('app_user_new') }}">Créer un Administrateur</a>
     </div>
