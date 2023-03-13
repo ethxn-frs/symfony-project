@@ -4,11 +4,11 @@
       <div class="d-flex">
         <img src="{{ asset('assets/logo.jpg') }}" alt="">
         <nav class="d-flex white">
-          <a href="{{ path('app_home') }}" {% if app.request.get('_route') == 'app_home' %} class="active"{% endif %}>Accueil</a>
-          <a href="">Partenariat</a>
-          <a href="{{ path('app_about') }}" class="{{ app.request.get('_route') == 'app_about' ? 'active' }}">A propos de nous</a>
-          <a href="">Billeterie</a>
-          <a href="">Contact</a>
+          <a href="{{ path('home') }}" {% if app.request.get('_route') == 'home' %} class="active"{% endif %}>Accueil</a>
+          <a href="{{ path('partenaire') }}">Partenariat</a>
+          <a href="{{ path('about') }}" class="{{ app.request.get('_route') == 'about' ? 'active' }}">A propos de nous</a>
+          <a href="{{ path('billeterie') }}">Billeterie</a>
+          <a href="{{ path('contact') }}">Contact</a>
         </nav>
       </div>
     </div>

@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class TicketOfficeController extends AbstractController
 {
-    #[Route('/ticketoffice', name: 'app_ticket_office')]
+    #[Route('/ticketoffice', name: 'billeterie')]
     public function index(): Response
     {
         return $this->render('ticket_office/index.html.twig', [

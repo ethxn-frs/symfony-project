@@ -3,6 +3,47 @@
 {% block title %}Connexion{% endblock %}
 
 {% block body %}
+
+<style>
+form{
+  border: solid 2px #1B3168;
+  padding: 150px 70px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+input{
+  width: 300px;
+  height: 40px;
+  border: solid 2px white;
+  border-bottom: solid 1px #1B3168;
+}
+label{
+  font-size: 24px;
+  color: #1B3168;
+}
+input{
+  width: 300px;
+  height: 40px;
+  border: solid 2px white;
+  border-bottom: solid 1px #1B3168;
+}
+.btn{
+  cursor: pointer;
+  color: #1B3168;
+  border: solid 2px #1B3168;
+  padding: 10px 30px;
+  border-radius: 5px;
+  background-color: white;
+  font-size: 17px;
+}
+.btn:hover{
+  background-color: #1B3168;
+  color: white;
+  border:  solid 2px #1B3168;;
+}
+</style>
 <div class="page" style=" height: 711px; display:flex ; justify-content: center ; align-items: center">
     <form method="post">
         <h3 style=" color: #1B3168; font-size: 3em ; top: -90px ; position: relative ;">Connexion</h3>
