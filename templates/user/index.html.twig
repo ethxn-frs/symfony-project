@@ -9,7 +9,7 @@
         
         <table class="table" style=" position: relative; top: -110px; width: 50%">
             <thead>
-                <tr>
+                <tr style="display: flex; width: 100%; justify-content: center; gap: 215px" >
                     <th>Id</th>
                     <th>Email</th>
                     <th>Roles</th>
@@ -18,13 +18,13 @@
                 </thead>
             <tbody>
             {% for user in users %}
-                <tr>
+                <tr style="display: flex; justify-content: center; gap: 115px; align-items: center;">
                     <td style="width:50px">{{ user.id }}</td>
                     <td>{{ user.email }}</td>
                     <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
-                    <td>
-                        <a href="{{ path('app_user_show', {'id': user.id}) }}">Détails</a>
-                        <a href="{{ path('app_user_edit', {'id': user.id}) }}">Modifier</a>
+                    <td style="display: flex;">
+                        <a class="btn" href="{{ path('app_user_show', {'id': user.id}) }}">Détails</a>
+                        <a class="btn" href="{{ path('app_user_edit', {'id': user.id}) }}">Modifier</a>
                     </td>
                 </tr>
             {% else %}
