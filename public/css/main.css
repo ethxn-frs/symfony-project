@@ -210,3 +210,19 @@ footer input[type=text]{
 .main-content {
   width: 80.6%;
 }
+.array {
+  margin-bottom: 40px;
+}
+.array .col {
+  width: calc(100% / 4);
+}
+.array .justify-start {
+  gap: 16px;
+}
+.array .header-array {
+  margin-bottom: 12px;
+}
+.backoffice h1 {
+  font-size: 30px;
+  margin: 32px 0 64px 0;
+}
