@@ -2,7 +2,7 @@
 
 namespace App\Repository;
 
-use App\Entity\Sondage;
+use App\Entity\Survey;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
