@@ -48,14 +48,46 @@ a {
  box-sizing: border-box;
  scroll-behavior: smooth;
 }
-
+body {
+  font-family: 'Inter' !important;
+}
+input {
+  background-color: #fff;
+  border: none;
+}
 .d-flex {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-header .background {
+.t-center {
+  text-align: center;
+}
+.direction-column {
+  flex-direction: column;
+}
+.align-start {
+  align-items: flex-start;
+}
+.text-right {
+  text-align: right;
+}
+.justify-start {
+  justify-content: flex-start;
+}
+.justify-around {
+  justify-content: space-around;
+}
+.justify-end {
+  justify-content: flex-end;
+}
+header .background,
+.survey .background,
+.status {
   background-color: #1B3168;
+}
+footer .background {
+  background-color: #B6A886;
 }
 header a {
   padding: 17px 37px;
@@ -64,54 +96,117 @@ header a {
 .white {
   color: #fff;
 }
+.blue {
+  color: #1B3168;
+}
 .container {
   width: 1440px;
   margin: 0 auto;
-}
-
-form{
-  border: solid 2px #1B3168;
-  padding: 150px 70px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
 }
 
 .inputForm{
   display: flex;
   flex-direction: column;
 }
-
-input{
-  width: 300px;
-  height: 40px;
-  border: solid 2px white;
-  border-bottom: solid 1px #1B3168;
-}
-
 input::placeholder{
   color: #1B3168;
 }
-
-.btn{
-  cursor: pointer;
-  color: #1B3168;
-  border: solid 2px #1B3168;
-  padding: 10px 30px;
-  border-radius: 5px;
-  background-color: white;
-  font-size: 17px;
+footer input[type=submit]{
+  padding: 7.5px 25.5px ;
+  border-radius: 7px;
 }
-
-.btn:hover{
-  background-color: #1B3168;
-  color: white;
-  border:  solid 2px #1B3168;;
-  
+footer input[type=text]{
+  padding: 7px 16px;
+  padding: 7.5px 10px;
+  border-radius: 7px;
 }
-
-label{
+.survey {
+  background-color: #EFEDED;
+}
+.survey .body {
+  padding: 12px 0 32px 0;
+}
+.survey .justify-start {
+  margin: 0 0 12px 40px;
+}
+.survey .question {
+  margin-bottom: 20px;
+}
+.survey h3 {
+  padding: 18px 48px;
+  font-size: 18px;
+}
+.survey .btn {
+  background-color: #fff;
+  padding: 8px 6px;
+  color: #000000;
+  font-size: 11px;
+  width: 110px;
+}
+.survey .call-action {
+  padding: 8px;
+}
+.presentation {
+  background-color: #D9D9D9;
+  padding: 14px;
+}
+.presentation h3 {
   font-size: 24px;
-  color: #1B3168;
+  margin-bottom: 20px;
+}
+.presentation p:nth-child(2){
+  margin-bottom: 8px;
+}
+.ad {
+  background-color: #EFEDED;
+  padding: 16px;
+  margin-bottom: 28px;
+}
+.status {
+  padding: 5px 20px;
+  border-radius: 7px;
+  font-size: 10px;
+}
+.ad .justify-start {
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.ad:last-child{
+  margin-bottom: 0;
+}
+.ad p:nth-child(4){
+  margin-top: 20px;
+}
+#ads h4 {
+  font-size: 30px;
+  margin: 28px 0 20px 0;
+}
+.current-page {
+  margin: 32px 0;
+}
+.tab h2 {
+  color: #B6A886;
+  font-size: 20px;
+  margin-bottom: 18px;
+}
+.tab section {
+  margin-bottom: 28px;
+}
+.tab .direction-column {
+  gap: 12px;
+  font-size: 14px;
+}
+.tab .information p {
+  margin-bottom: 12px;
+  font-size: 14px;
+  line-height: 136%;
+}
+.tab .information p:nth-child(4){
+  margin-bottom: 0;
+}
+.tab {
+  width: 17.4%;
+}
+.main-content {
+  width: 80.6%;
 }

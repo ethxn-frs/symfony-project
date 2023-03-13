@@ -3,13 +3,102 @@
 {% block title %}Accueil CSE St Vincent{% endblock %}
 
 {% block body %}
-<style>
-</style>
 
-<div class="example-wrapper">
-    <ul>
-        <li>Your controller at <code><a href="{{ '/home/qrulleau/Bureau/cours/2eme/symfony-project/src/Controller/HomeController.php'|file_link(0) }}">src/Controller/HomeController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/home/qrulleau/Bureau/cours/2eme/symfony-project/templates/home/index.html.twig'|file_link(0) }}">templates/home/index.html.twig</a></code></li>
-    </ul>
+<div class="d-flex align-start">
+  <div class="tab">
+    <section>
+      <div class="survey">
+        <div class="background white">
+          <h3 class="t-center">Votre avis compte</h3>
+        </div>
+        <div class="body">
+          <p class="t-center question">Pour quel parc d'attraction  souhaiteriez-vous obtenir des prix ?</p>
+          <div class="d-flex justify-start">
+            <input type="radio" name="test" id="" value="le parc asterix"> 
+            <label>le parc asterix</label>
+          </div>
+          <div class="d-flex justify-start">
+            <input type="radio" name="test" id="" value="le parc disneyland"> 
+            <label>le parc disneyland</label>
+          </div>
+          <div class="d-flex justify-start">
+            <input type="radio" name="test" id="" value="le futoroscope"> 
+            <label>le futoroscope</label>
+          </div>
+        </div>
+        <div class="d-flex background white call-action">
+          <a class="btn t-center" href="#">Voir les reponses</a>
+          <a class="btn t-center" href="#">Valider</a>
+        </div>
+      </div>
+    </section>
+    <section>
+      <h2>Accès rapide</h2>
+      <div class="d-flex direction-column align-start">
+        <a href="{{ path('billeterie') }}">> Offres permanentes / Billetterie</a>
+        <a href="{{ path('contact') }}">> Nous contacter</a>
+      </div>
+    </section>
+    <section class="information">
+      <h2>Information de contact</h2>
+      <p>> Par téléphone : +33303030303</p>
+      <p>> Par email : cse@lyceestvincent.fr</p>
+      <p>> Au lycée : Bureau du CSE (1er étage bâtiment Saint-Vincent)</p>
+    </section>
+    <section>
+      <h2>Nos partenaires</h2>
+      <a href="{{ path('partenaire') }}">Découvrir tous nos partenaires</a>
+    </section>
+  </div>
+  <div class="main-content">
+    <section>
+      <div class="background presentation">
+        <h3 class="blue">CSE Lycée Saint-Vincent</h3>
+        <p>Nous vous souhaitons la bienvenue sur le site du comité social et économique du lycée Saint-Vincent à Senlis.</p>
+        <p>Découvrez <a href="">l'équipe</a> et <a href="">le rôle</a> et missions de votre CSE.</p>
+      </div>
+    </section>
+    <section id="ads">
+      <h4>Dernières offres ponctuelles</h4>
+      <div class="ad">
+        <div class="d-flex justify-start">
+          <p class="status white">OFFRE PONCTUELLE</p>
+          <p class="date">Publié le 11 décembre 2022 - Du 10/12/2022 au 24/12/2022</p>
+        </div>
+        <p>Profitez de -20% sur une sélection de parfum, en partenariat avec l'enseigne Nocibé de Senlis.</p>
+        <p>Merci de vous rendre au bureau du CSE pour pouvor passer commande</p>
+        <p>Catalogue : tarifs.pdf</p>
+        <div class="d-flex justify-end">
+          <a href="" class="text-right">En savoir plus ></a>
+        </div>
+      </div>
+      <div class="ad">
+        <div class="d-flex justify-start">
+          <p class="status white">OFFRE PONCTUELLE</p>
+          <p class="date">Publié le 11 décembre 2022 - Du 10/12/2022 au 24/12/2022</p>
+        </div>
+        <p>Profitez de -20% sur une sélection de parfum, en partenariat avec l'enseigne Nocibé de Senlis.</p>
+        <p>Merci de vous rendre au bureau du CSE pour pouvor passer commande</p>
+        <p>Catalogue : tarifs.pdf</p>
+        <div class="d-flex justify-end">
+          <a href="" class="text-right">En savoir plus ></a>
+        </div>
+      </div>
+      <div class="ad">
+        <div class="d-flex justify-start">
+          <p class="status white">OFFRE PONCTUELLE</p>
+          <p class="date">Publié le 11 décembre 2022 - Du 10/12/2022 au 24/12/2022</p>
+        </div>
+        <p>Profitez de -20% sur une sélection de parfum, en partenariat avec l'enseigne Nocibé de Senlis.</p>
+        <p>Merci de vous rendre au bureau du CSE pour pouvor passer commande</p>
+        <p>Catalogue : tarifs.pdf</p>
+        <div class="d-flex justify-end">
+          <a href="" class="text-right">En savoir plus ></a>
+        </div>
+      </div>
+    </section>
+  </div>
 </div>
+
+
 {% endblock %}
