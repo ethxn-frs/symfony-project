@@ -1,20 +1,62 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ContactController!{% endblock %}
+{% block title %}Contact{% endblock %}
 
 {% block body %}
+
 <style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 17px;
+}
+
+.btn{
+  cursor: pointer;
+  color: #1B3168;
+  border: solid 2px #1B3168;
+  padding: 10px 30px;
+  border-radius: 5px;
+  background-color: white;
+  font-size: 17px;
+}
+.btn:hover{
+  background-color: #1B3168;
+  color: white;
+  border:  solid 2px #1B3168;;
+}
+
+input{
+    width: 210px;   
+    height: 30px;
+    border-radius: 5px;
+}
+
 </style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/admin/Desktop/symfony-project/src/Controller/ContactController.php'|file_link(0) }}">src/Controller/ContactController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/admin/Desktop/symfony-project/templates/contact/index.html.twig'|file_link(0) }}">templates/contact/index.html.twig</a></code></li>
-    </ul>
-</div>
+<form action="" method="post" >
+    <h2 style="font-size: 28px" >Remplissez le formulaire ci-dessous pour nous contacter</h2>
+
+    <label for="firstname">Votre prénom :</label>
+    <input type="text" name="firstname">
+
+    <label for="lastname">Votre nom :</label>
+    <input type="text" name="lastname">
+
+    <label for="email">Votre email :</label>
+    <input type="email" name="email">
+
+    <label for="message">Votre message :</label>
+    <input style="height: 150px ;" type="textarea" name="message">
+
+    <div class="buttons">
+        <button class="btn" type="reset">Annuler</button>
+        <button class="btn" type="submit">Envoyer</button>
+    </div>
+
+</form>
+
 {% endblock %}
