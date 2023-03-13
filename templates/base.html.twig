@@ -15,9 +15,15 @@
         {% endblock %}
     </head>
     <body>
-        {% include 'includes/header.php' %}
-        <button></button>
+        {% include 'includes/header.html.twig' %}
+        <div class="container">
+            <div class="d-flex justify-start">
+                <img src="{{ asset('assets/home.png') }}" alt="">
+                <h2> > {{ app.request.get('_route') }}</h2>
+            </div>
 
-        {% block body %}{% endblock %}
+            {% block body %}{% endblock %}
+        </div>
+        {% include 'includes/footer.php' %}
     </body>
 </html>

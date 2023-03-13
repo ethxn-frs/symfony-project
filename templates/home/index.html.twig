@@ -3,13 +3,40 @@
 {% block title %}Accueil projet symfony!{% endblock %}
 
 {% block body %}
-<style>
-</style>
 
-<div class="example-wrapper">
-    <ul>
-        <li>Your controller at <code><a href="{{ '/home/qrulleau/Bureau/cours/2eme/symfony-project/src/Controller/HomeController.php'|file_link(0) }}">src/Controller/HomeController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/home/qrulleau/Bureau/cours/2eme/symfony-project/templates/home/index.html.twig'|file_link(0) }}">templates/home/index.html.twig</a></code></li>
-    </ul>
+<div class="d-flex">
+  <div>
+    <section>
+      <div class="survey">
+        <div class="background white">
+          <h3 class="t-center">Votre avis compte</h3>
+        </div>
+        <p>Pour quel parc d’attraction  souhaiteriez-vous obtenir des prix ?</p>
+        <div class="d-flex justify-start">
+          <input type="radio" name="test" id="" value="le parc asterix"> 
+          <label>le parc asterix</label>
+        </div>
+        <div class="d-flex justify-start">
+          <input type="radio" name="test" id="" value="le parc disneyland"> 
+          <label>le parc disneyland</label>
+        </div>
+        <div class="d-flex justify-start">
+          <input type="radio" name="test" id="" value="le futoroscope"> 
+          <label>le futoroscope</label>
+        </div>
+        <div class="d-flex background white">
+          <a href="#">Voir les reponses</a>
+          <a href="#">Valider</a>
+        </div>
+      </div>
+    </section>
+    <section>
+      <h2>Accès rapide</h2>
+      <a href="{{ path() }}">Offres permanentes / Billetterie</a>
+      <a href="{{ path() }}">Nous contacter</a>
+    </section>
+  </div>
 </div>
+
+
 {% endblock %}

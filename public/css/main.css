@@ -48,14 +48,33 @@ a {
  box-sizing: border-box;
  scroll-behavior: smooth;
 }
-
+input {
+  background-color: #fff;
+  border: none;
+}
 .d-flex {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-header .background {
+.t-center {
+  text-align: center;
+}
+.direction-column {
+  flex-direction: column;
+}
+.align-start {
+  align-items: flex-start;
+}
+.justify-start {
+  justify-content: flex-start;
+}
+header .background,
+.survey .background {
   background-color: #1B3168;
+}
+footer .background {
+  background-color: #B6A886;
 }
 header a {
   padding: 17px 37px;
@@ -67,4 +86,16 @@ header a {
 .container {
   width: 1440px;
   margin: 0 auto;
+}
+footer input[type=submit]{
+  padding: 7.5px 25.5px ;
+  border-radius: 7px;
+}
+footer input[type=text]{
+  padding: 7px 16px;
+  padding: 7.5px 10px;
+  border-radius: 7px;
+}
+.survey {
+  width: 250px;
 }
