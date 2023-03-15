@@ -4,16 +4,105 @@
 
 {% block body %}
 
-<div class="example-wrapper">
-    <h1>Page About us</h1>
+    <style>
 
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam unde cupiditate accusamus voluptatem officia adipisci.</p>
-    
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam unde cupiditate accusamus voluptatem officia adipisci.</p>
+        section {
+            margin-bottom: 52px;
+        }
+        .link {
+            background-color: #1B3168;
+            padding: 8px 18px;
+            font-weight: bold;
+        }
+        .reglement p:nth-child(5){
+            margin-bottom: 32px;
+        }
+        .reglement p:nth-child(3){
+            margin-bottom: 40px;
+        }
+        .reglement p {
+            line-height: 135%;
+        }
+         h4 {
+            font-size:20px;
+            font-weight:bold;
+            margin-bottom: 28px;
+         }
+    </style>
 
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam unde cupiditate accusamus voluptatem officia adipisci.</p>
-    
+    <h3>Presentation du CSE</h3>
 
-  
-</div>
+    <section>
+        <div class="d-flex">
+
+            <div class="case">
+                <img src="{{ asset('assets/person.jpg') }}" alt="">
+                <h4 class="t-center">Jean michel - <span>Adjoint</span></h4>
+            </div>
+
+            <div class="case">
+                <img src="{{ asset('assets/person1.jpg') }}" alt="">
+                <h4 class="t-center">Jean michel - <span>Adjoint</span></h4>
+            </div>
+
+            <div class="case">
+                <img src="{{ asset('assets/person2.jpg') }}" alt="">
+                <h4 class="t-center">Jean michel - <span>Adjoint</span></h4>
+            </div>
+
+            <div class="case">
+                <img src="{{ asset('assets/person3.jpg') }}" alt="">
+                <h4 class="t-center">Jean michel - <span>Adjoint</span></h4>
+            </div>
+
+             <div class="case">
+                <img src="{{ asset('assets/person3.jpg') }}" alt="">
+                <h4 class="t-center">Jean michel - <span>Adjoint</span></h4>
+            </div>
+
+        </div>
+    </section>
+    <section class="reglement">
+        <h3>Reglement du CSE</h3>
+
+        <h4>Horaires de l'établissement : Le Lycée Autrement</h4>
+
+        <p>Le portail de l'établissement est ouvert à partir de 7h30. Dès ce moment, les élèves peuvent accéder au foyer. Le portail est fermé à 8h15. La pause déjeuner est prévue selon l'emploi du temps entre 11h30 et 13h30. Les cours classiques se déroulent de 8h15 à 17H05 et les cours choisis sont proposés de 15h25 à 17h05 (17h55 pour des cas particuliers).</p>
+
+        <h4>Horaires de l'établissement : Le Lycée Autrement</h4>
+
+        <p>En dehors de la séquence réservée au déjeuner, les élèves ne sont pas autorisés à quitter l'établissement. Les étudiants de BTS peuvent bénéficier de dérogations particulières. Elles leur sont communiquées en début d'année. Les élèves bénéficiant d'un aménagement spécifique validé par le chef d'établissement ou son adjoint, peuvent circuler selon les modalités indiquées sur la carte dont ils disposent. Toute autre demande de sortie est soumise à l'autorisation de la vie scolaire.</p>
+
+        <a href="" class="link white">Pour lire la suite ></a>
+    </section>
+    <section>
+
+    <h3>Grace au CSE</h3>
+
+        <div class="d-flex">
+            <div class="case">
+                <img src="{{ asset('assets/activite.jpg') }}" alt="">
+                <h4 class="t-center">Sortie karting - <span>10/04/2015</span></h4>
+            </div>
+
+            <div class="case">
+                <img src="{{ asset('assets/activite1.jpg') }}" alt="">
+                <h4 class="t-center">Sortie bowling - <span>10/04/2015</span></h4>
+            </div>
+            <div class="case">
+                <img src="{{ asset('assets/activite2.jpg') }}" alt="">
+                <h4 class="t-center">Voyage italie - <span>10/04/2015</span></h4>
+            </div>
+            <div class="case">
+                <img src="{{ asset('assets/activite3.jpg') }}" alt="">
+                <h4 class="t-center">Restaurant - <span>10/04/2015</span></h4>
+            </div>
+            <div class="case">
+                <img src="{{ asset('assets/activite3.jpg') }}" alt="">
+                <h4 class="t-center">Restaurant - <span>10/04/2015</span></h4>
+            </div>
+        </div>
+
+    </section>
+   
 {% endblock %}

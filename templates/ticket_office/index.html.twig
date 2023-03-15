@@ -1,20 +1,108 @@
-{% extends 'baseBackoffice.html.twig' %}
+{% extends 'base.html.twig' %}
 
 {% block title %}Hello TicketOfficeController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <style>
+        form {
+            border-radius:13px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+            padding: 12px 32px;
+            width: fit-content;
+            margin: 46px 0  30px 0;
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/admin/Desktop/symfony-project/src/Controller/TicketOfficeController.php'|file_link(0) }}">src/Controller/TicketOfficeController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/admin/Desktop/symfony-project/templates/ticket_office/index.html.twig'|file_link(0) }}">templates/ticket_office/index.html.twig</a></code></li>
-    </ul>
-</div>
+        }
+        form > .d-flex {
+            gap:100px
+        }
+        form input[type=text]{
+            width:120px;
+            border:none;
+            border-bottom: 2px solid #EFEDED;
+            padding: 4px;
+        }
+        form input[type=date]{
+            border:none
+        }
+        .search-parameter {
+            gap: 40px;
+        }
+        .ad:last-child {
+            margin-bottom: 80px;
+        }
+    </style>
+
+    <form action="" method="post">
+        <div class="d-flex justify-start">
+            <input type="submit" value="chercher">
+            <div class="search-parameter d-flex">
+                <input type="text" name="" value="" placeholder="text">
+                <input id="date" name="" type="date" value="2017-06-01">
+            </div>
+        </div>
+    </form>
+
+    <h3>Billeterie</h3>
+
+    <div class="ad">
+        <div class="d-flex justify-start">
+          <p class="status white">OFFRE PERMANENTE</p>
+          <p class="date">Publié le 11 décembre 2022 - Du 10/12/2022 au 24/12/2022</p>
+        </div>
+        <p>Profitez de -20% sur une sélection de parfum, en partenariat avec l'enseigne Nocibé de Senlis.</p>
+        <p>Merci de vous rendre au bureau du CSE pour pouvor passer commande</p>
+        <p>Catalogue : tarifs.pdf</p>
+        <div class="d-flex justify-end">
+          <a href="" class="text-right">En savoir plus ></a>
+        </div>
+    </div>
+    <div class="ad">
+        <div class="d-flex justify-start">
+          <p class="status white">OFFRE PERMANENTE</p>
+          <p class="date">Publié le 11 décembre 2022 - Du 10/12/2022 au 24/12/2022</p>
+        </div>
+        <p>Profitez de -20% sur une sélection de parfum, en partenariat avec l'enseigne Nocibé de Senlis.</p>
+        <p>Merci de vous rendre au bureau du CSE pour pouvor passer commande</p>
+        <p>Catalogue : tarifs.pdf</p>
+        <div class="d-flex justify-end">
+          <a href="" class="text-right">En savoir plus ></a>
+        </div>
+    </div>
+     <div class="ad">
+        <div class="d-flex justify-start">
+          <p class="status white">OFFRE PERMANENTE</p>
+          <p class="date">Publié le 11 décembre 2022 - Du 10/12/2022 au 24/12/2022</p>
+        </div>
+        <p>Profitez de -20% sur une sélection de parfum, en partenariat avec l'enseigne Nocibé de Senlis.</p>
+        <p>Merci de vous rendre au bureau du CSE pour pouvor passer commande</p>
+        <p>Catalogue : tarifs.pdf</p>
+        <div class="d-flex justify-end">
+          <a href="" class="text-right">En savoir plus ></a>
+        </div>
+    </div>
+     <div class="ad">
+        <div class="d-flex justify-start">
+          <p class="status white">OFFRE PERMANENTE</p>
+          <p class="date">Publié le 11 décembre 2022 - Du 10/12/2022 au 24/12/2022</p>
+        </div>
+        <p>Profitez de -20% sur une sélection de parfum, en partenariat avec l'enseigne Nocibé de Senlis.</p>
+        <p>Merci de vous rendre au bureau du CSE pour pouvor passer commande</p>
+        <p>Catalogue : tarifs.pdf</p>
+        <div class="d-flex justify-end">
+          <a href="" class="text-right">En savoir plus ></a>
+        </div>
+    </div>
+     <div class="ad">
+        <div class="d-flex justify-start">
+          <p class="status white">OFFRE PERMANENTE</p>
+          <p class="date">Publié le 11 décembre 2022 - Du 10/12/2022 au 24/12/2022</p>
+        </div>
+        <p>Profitez de -20% sur une sélection de parfum, en partenariat avec l'enseigne Nocibé de Senlis.</p>
+        <p>Merci de vous rendre au bureau du CSE pour pouvor passer commande</p>
+        <p>Catalogue : tarifs.pdf</p>
+        <div class="d-flex justify-end">
+          <a href="" class="text-right">En savoir plus ></a>
+        </div>
+    </div>
 {% endblock %}
