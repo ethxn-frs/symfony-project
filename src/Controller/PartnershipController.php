@@ -7,9 +7,6 @@ use Symfony\Component\HttpFoundation\Response;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Component\Routing\Annotation\Route;
 
-/**
-* @IsGranted("ROLE_ADMIN")
-*/
 
 class PartnershipController extends AbstractController
 {
