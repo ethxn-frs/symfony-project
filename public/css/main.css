@@ -274,3 +274,15 @@ h3 {
   color: #B6A886;
   margin-bottom: 34px;
 }
+.case h4 {
+  font-size: 20px;
+  margin-top: 24px;
+}
+.case span {
+  font-weight: bold;
+  color: #1B3168;
+  font-size: 16px;
+}
+.active {
+  background-color: #B6A886;
+}
