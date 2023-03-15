@@ -226,3 +226,51 @@ footer input[type=text]{
   font-size: 30px;
   margin: 32px 0 64px 0;
 }
+.partnership {
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 80px;
+}
+.brand {
+  position: relative;
+  overflow: hidden;
+}
+.brand:hover .background {
+  top: 0%;
+  transition: 350ms;
+}
+.description {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  top: 100%;
+  right: 0;
+  padding: 0 24px;
+}
+.brand .background {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+}
+.brand .detail {
+  top: 25%;
+}
+.brand h4 {
+  font-size: 24px;
+  font-weight: bold;
+}
+.brand a {
+  background-color: #fff;
+  font-size: 14px;
+  color: #000000;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+.brand p {
+  margin: 12px 0 18px 0 ;
+}
+h3 {
+  font-size: 30px;
+  font-weight: 600;
+  color: #B6A886;
+  margin-bottom: 34px;
+}
