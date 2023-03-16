@@ -286,3 +286,28 @@ h3 {
 .active {
   background-color: #B6A886;
 }
+.backoffice {
+  height: 100vh;
+}
+.backoffice .background {
+  height: 100vh;
+}
+.backoffice .background > .d-flex {
+  gap: 152px;
+  padding: 0px 0px;
+}
+.backoffice .background .white {
+  gap: 40px;
+}
+.backoffice .background .white a:last-child {
+  margin-top: 292px;
+  font-weight: bold;
+}
+.backoffice a {
+  padding: 0;
+  font-size: 16px;
+}
+.backoffice a:hover {
+  border-bottom: 1px solid #fff;
+  transition: 400ms;
+}
