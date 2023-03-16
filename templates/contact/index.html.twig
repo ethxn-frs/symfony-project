@@ -30,33 +30,89 @@ form{
 
 input{
     width: 210px;   
-    height: 30px;
-    border-radius: 5px;
+    height: 48px;
+    padding: 16px;
+    border:none;
+    background-color: #EFEDED;
 }
+.column {
+  width: 200px;
+}
+span {
+  width: 100%;
+  border-bottom: 1px solid #D9D9D9;
+}
+input[type=submit]{
+  padding: 16px 38px;
+  background-color: #fff;
+  border: 1px solid #D9D9D9;
+  width: inherit;
+}
+.identity .d-flex {
+  gap : 48px;
 
+}
+.email input {
+  width: 468px;
+}
+textarea {
+  background-color: #EFEDED;
+  border: none;
+  width: 468px;
+  height: 204px;
+}
+p {
+  margin-bottom: 32px;
+}
+.align-start .column {
+  padding-top: 12px;
+}
+.form {
+  margin-bottom: 80px;
+}
 </style>
 
+<h3>Contact</h3>
 
-<form action="" method="post" >
-    <h2 style="font-size: 28px" >Remplissez le formulaire ci-dessous pour nous contacter</h2>
+<p>Merci de remplir les informations suivantes et on vous repondra le plus rapidement possible.</p>
 
-    <label for="firstname">Votre prénom :</label>
-    <input type="text" name="firstname">
-
-    <label for="lastname">Votre nom :</label>
-    <input type="text" name="lastname">
-
-    <label for="email">Votre email :</label>
-    <input type="email" name="email">
-
-    <label for="message">Votre message :</label>
-    <input style="height: 150px ;" type="textarea" name="message">
-
-    <div class="buttons">
-        <button class="btn" type="reset">Annuler</button>
-        <button class="btn" type="submit">Envoyer</button>
+<div class="d-flex form">
+  <form action="" method="post" class="d-flex align-start" >
+    <div class="d-flex identity">
+      <div class="column">
+        <label for="firstname">Votre identite</label>
+      </div>
+      <div class="d-flex">
+        <input type="text" name="" id="" placeholder="Prenom">
+        <input type="text" name="" id="" placeholder="Nom">
+      </div>
     </div>
 
-</form>
+    <div class="d-flex email">
+      <div class="column">
+        <label for="firstname">Votre email</label>
+      </div>
+      <input type="email" name="" id="" placeholder="prenom@gmail.com">
+    </div>
+
+    <div class="d-flex message align-start">
+      <div class="column">
+        <label for="firstname">Message</label>
+      </div>
+      <textarea name="" id="" ></textarea>
+    </div>
+
+    <div class="d-flex check">
+      <div class="column">
+        <label for="firstname">Verification</label>
+      </div>
+    </div>
+    <span></span>
+      
+    <input type="submit" value="ENVOYER">
+
+  </form>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10427.423013121062!2d2.5887978!3d49.2032959!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e630cfeb73f31d%3A0x48c819ca44bf7503!2sLyc%C3%A9e%20Priv%C3%A9%20Saint%20Vincent%20de%20Senlis!5e0!3m2!1sfr!2sfr!4v1678892332494!5m2!1sfr!2sfr" width="620" height="651" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
 
 {% endblock %}

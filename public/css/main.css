@@ -55,6 +55,9 @@ footer input {
   background-color: #fff;
   border: none;
 }
+a, input {
+  cursor: pointer;
+}
 .d-flex {
   display: flex;
   justify-content: space-between;
