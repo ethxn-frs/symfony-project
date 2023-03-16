@@ -49,11 +49,14 @@ a {
  scroll-behavior: smooth;
 }
 body {
-  font-family: 'Inter' !important;
+  font-family: 'Montserrat', sans-serif;
 }
 footer input {
   background-color: #fff;
   border: none;
+}
+a, input {
+  cursor: pointer;
 }
 .d-flex {
   display: flex;
@@ -90,7 +93,7 @@ footer .background {
   background-color: #B6A886;
 }
 header a {
-  padding: 17px 37px;
+  padding: 46px 38px;
   font-size: 18px;
 }
 .white {
@@ -285,4 +288,29 @@ h3 {
 }
 .active {
   background-color: #B6A886;
+}
+.backoffice {
+  height: 100vh;
+}
+.backoffice .background {
+  height: 100vh;
+}
+.backoffice .background > .d-flex {
+  gap: 152px;
+  padding: 0px 0px;
+}
+.backoffice .background .white {
+  gap: 40px;
+}
+.backoffice .background .white a:last-child {
+  margin-top: 292px;
+  font-weight: bold;
+}
+.backoffice a {
+  padding: 0;
+  font-size: 16px;
+}
+.backoffice a:hover {
+  border-bottom: 1px solid #fff;
+  transition: 400ms;
 }
