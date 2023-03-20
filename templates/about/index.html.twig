@@ -28,40 +28,28 @@
             font-weight:bold;
             margin-bottom: 28px;
          }
+         .case {
+            width: 250px;
+         }
     </style>
 
     <h3>Presentation du CSE</h3>
 
     <section>
-        <div class="d-flex">
+        <div class="d-flex align-start">
+
+            {% for member in members %}
 
             <div class="case">
-                <img src="{{ asset('assets/person.jpg') }}" alt="">
-                <h4 class="t-center">Jean michel - <span>Adjoint</span></h4>
-            </div>
+                <img src="{{ asset( 'assets/member/' ~ member.picture) }}"/>
+                <h4 class="t-center">{{ member.fullname }} - <span>{{member.role}}</span></h4>
+             </div>
 
-            <div class="case">
-                <img src="{{ asset('assets/person1.jpg') }}" alt="">
-                <h4 class="t-center">Jean michel - <span>Adjoint</span></h4>
-            </div>
-
-            <div class="case">
-                <img src="{{ asset('assets/person2.jpg') }}" alt="">
-                <h4 class="t-center">Jean michel - <span>Adjoint</span></h4>
-            </div>
-
-            <div class="case">
-                <img src="{{ asset('assets/person3.jpg') }}" alt="">
-                <h4 class="t-center">Jean michel - <span>Adjoint</span></h4>
-            </div>
-
-             <div class="case">
-                <img src="{{ asset('assets/person3.jpg') }}" alt="">
-                <h4 class="t-center">Jean michel - <span>Adjoint</span></h4>
-            </div>
+            {% endfor %}
 
         </div>
     </section>
+
     <section class="reglement">
         <h3>Reglement du CSE</h3>
         {% for item in reglements %}
