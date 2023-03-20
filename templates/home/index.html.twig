@@ -53,8 +53,12 @@
   <div class="main-content">
     <section>
       <div class="background presentation">
-        <h3 class="blue">CSE Lycée Saint-Vincent</h3>
-        <p>Nous vous souhaitons la bienvenue sur le site du comité social et économique du lycée Saint-Vincent à Senlis.</p>
+        {% for item in presentation %}
+        <h3 class="blue"> {{item.title}} </h3>
+        <p> {{item.content}} </p>
+        {% else %}
+        <p>Aucun contenu n'a été trouvé</p>
+        {% endfor %}
         <p>Découvrez <a href="">l'équipe</a> et <a href="">le rôle</a> et missions de votre CSE.</p>
       </div>
     </section>
@@ -99,6 +103,4 @@
     </section>
   </div>
 </div>
-
-
 {% endblock %}
