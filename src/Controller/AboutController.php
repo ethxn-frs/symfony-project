@@ -9,16 +9,18 @@ use App\Entity\Content;
 use App\Form\ContentType;
 use App\Repository\ContentRepository;
 use App\Repository\MemberRepository;
+use App\Repository\ActivityRepository;
 
 class AboutController extends AbstractController
 {
     #[Route('/about', name: 'about')]
-    public function index(ContentRepository $contentRepository, MemberRepository $memberRepository): Response
+    public function index(ContentRepository $contentRepository, MemberRepository $memberRepository, ActivityRepository $activityRepository): Response
     {
         return $this->render('about/index.html.twig', [
             'controller_name' => 'AboutController',
             'reglements' => $contentRepository-> findBy(array('page' => "AboutPage", 'section' => 'Reglement' )),
-            'members' => $memberRepository->findAll()
+            'members' => $memberRepository->findAll(),
+            'activities' => $activityRepository->findAll()
         ]);
     }
 }
