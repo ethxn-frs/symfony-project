@@ -1,0 +1,56 @@
+{% extends 'baseBackoffice.html.twig' %}
+
+{% block title %}Offre{% endblock %}
+
+{% block body %}
+    <h1>Offre</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ offer.id }}</td>
+            </tr>   
+            <tr>
+                <th>Name</th>
+                <td>{{ offer.name }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ offer.image }}</td>
+            </tr>
+            <tr>
+                <th>Text</th>
+                <td>{{ offer.text }}</td>
+            </tr>
+            <tr>
+                <th>Debut</th>
+                <td>{{ offer.start_date.format('Y-m-d') }}</td>
+            </tr>
+            <tr>
+                <th>Fin</th>
+                <td>{{ offer.end_date.format('Y-m-d') }}</td>
+
+            </tr>
+            <tr>
+                <th>Minimum de places</th>
+                <td>{{ offer.min_place }}</td>
+            </tr>
+            <tr>
+                <th>Ordre d'affichage   </th>
+                <td>{{ offer.order_num }}</td>
+                <td>{{ offer.end_date }}</td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td>{{ offer.status }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_offer_index') }}">back to list</a>
+
+    <a href="{{ path('app_offer_edit', {'id': offer.id}) }}">edit</a>
+
+    {{ include('offer/_delete_form.html.twig') }}
+{% endblock %}

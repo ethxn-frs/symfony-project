@@ -1,0 +1,175 @@
+{% extends 'baseBackoffice.html.twig' %}
+
+{% block title %}Hello OfferController!{% endblock %}
+
+{% block body %}
+
+<h2>Offres permanantes</h2>
+
+        <div class="array container">
+            <div class="header-array">
+                <div class="d-flex">
+                    <div class="col">
+                        <h3>ID</h3>
+                    </div>
+                    <div class="col">
+                        <h3>Name</h3>
+                    </div>
+                    <div class="col">
+                        <h3>Image</h3>
+                    </div>
+                    <div class="col">
+                        <h3>Text</h3>
+                    </div>
+                    <div class="col">
+                        <h3>Date de début</h3>
+                    </div>
+                    <div class="col">
+                        <h3>Date de Fin</h3>
+                    </div>
+                    <div class="col">
+                        <h3>Date de Création</h3>
+                    </div>
+                    <div class="col">
+                        <h3>Minimum de place</h3>
+                    </div>
+                    <div class="col">
+                        <h3>Ordre d'affichage</h3>
+                    </div>
+                    <div class="col">
+                        <h3>Status</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="body-array">
+                {% for item in permanantesOffers %}
+                <div class="d-flex">
+                    <div class="col">
+                        <p>{{ item.id }}</p>
+                    </div>
+                    <div class="col">
+                        <p>{{ item.name }}</p>
+                    </div>
+                    <div class="col">
+                        <p>{{ item.image }}</p>
+                    </div>
+                    <div class="col">
+                        <p>{{ item.text }}</p>
+                    </div>
+                    <div class="col">
+                        <p>{{ item.start_date.format('Y-m-d') }}</p>
+                    </div>
+                    <div class="col">
+                        <p>{{ item.end_date.format('Y-m-d') }}</p>
+                    </div>
+                    <div class="col">
+                        <p>{{ item.created_at.format('Y-m-d') }}</p>
+                    </div>
+                    <div class="col">
+                        <p>{{ item.min_place }}</p>
+                    </div>
+                    <div class="col">
+                        <p>{{ item.order_num }}</p>
+                    </div>
+                    <div class="col">
+                        <p>{{ item.status }}</p>
+                    </div>
+
+                    <div class="col d-flex justify-start">
+                        <a class="btn" href="{{ path('app_offer_show', {'id': item.id}) }}">Détails</a>
+                        <a class="btn" href="{{ path('app_offer_edit', {'id': item.id}) }}">Modifier</a>
+                    </div>
+                </div>
+                {% else %}
+                    <tr>
+                        <td colspan="5">Aucune Offre permanante n'a été trouvé. Créer en un.</td>
+                    </tr>
+                {% endfor %}
+            </div>
+        </div>
+
+        <h2>Offres ponctuelles</h2>
+
+        <div class="array container">
+            <div class="header-array">
+                <div class="d-flex">
+                    <div class="col">
+                        <h3>ID</h3>
+                    </div>
+                    <div class="col">
+                        <h3>Name</h3>
+                    </div>
+                    <div class="col">
+                        <h3>Image</h3>
+                    </div>
+                    <div class="col">
+                        <h3>Text</h3>
+                    </div>
+                    <div class="col">
+                        <h3>Date de début</h3>
+                    </div>
+                    <div class="col">
+                        <h3>Date de Fin</h3>
+                    </div>
+                    <div class="col">
+                        <h3>Date de Création</h3>
+                    </div>
+                    <div class="col">
+                        <h3>Minimum de place</h3>
+                    </div>
+                    <div class="col">
+                        <h3>Ordre d'affichage</h3>
+                    </div>
+                    <div class="col">
+                        <h3>Status</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="body-array">
+                {% for item in ponctualsOffers %}
+                <div class="d-flex">
+                    <div class="col">
+                        <p>{{ item.id }}</p>
+                    </div>
+                    <div class="col">
+                        <p>{{ item.name }}</p>
+                    </div>
+                    <div class="col">
+                        <p>{{ item.image }}</p>
+                    </div>
+                    <div class="col">
+                        <p>{{ item.text }}</p>
+                    </div>
+                    <div class="col">
+                        <p>{{ item.start_date.format('Y-m-d') }}</p>
+                    </div>
+                    <div class="col">
+                        <p>{{ item.end_date.format('Y-m-d') }}</p>
+                    </div>
+                    <div class="col">
+                        <p>{{ item.created_at.format('Y-m-d') }}</p>
+                    </div>
+                    <div class="col">
+                        <p>{{ item.min_place }}</p>
+                    </div>
+                    <div class="col">
+                        <p>{{ item.order_num }}</p>
+                    </div>
+                    <div class="col">
+                        <p>{{ item.status }}</p>
+                    </div>
+
+                    <div class="col d-flex justify-start">
+                        <a class="btn" href="{{ path('app_offer_show', {'id': item.id}) }}">Détails</a>
+                        <a class="btn" href="{{ path('app_offer_edit', {'id': item.id}) }}">Modifier</a>
+                    </div>
+                </div>
+                {% else %}
+                    <tr>
+                        <td colspan="5">Aucune Offre ponctuelle n'a été trouvé. Créer en un.</td>
+                    </tr>
+                {% endfor %}
+            </div>
+        </div>
+
+{% endblock %}

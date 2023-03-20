@@ -64,15 +64,12 @@
     </section>
     <section class="reglement">
         <h3>Reglement du CSE</h3>
-
-        <h4>Horaires de l'établissement : Le Lycée Autrement</h4>
-
-        <p>Le portail de l'établissement est ouvert à partir de 7h30. Dès ce moment, les élèves peuvent accéder au foyer. Le portail est fermé à 8h15. La pause déjeuner est prévue selon l'emploi du temps entre 11h30 et 13h30. Les cours classiques se déroulent de 8h15 à 17H05 et les cours choisis sont proposés de 15h25 à 17h05 (17h55 pour des cas particuliers).</p>
-
-        <h4>Horaires de l'établissement : Le Lycée Autrement</h4>
-
-        <p>En dehors de la séquence réservée au déjeuner, les élèves ne sont pas autorisés à quitter l'établissement. Les étudiants de BTS peuvent bénéficier de dérogations particulières. Elles leur sont communiquées en début d'année. Les élèves bénéficiant d'un aménagement spécifique validé par le chef d'établissement ou son adjoint, peuvent circuler selon les modalités indiquées sur la carte dont ils disposent. Toute autre demande de sortie est soumise à l'autorisation de la vie scolaire.</p>
-
+        {% for item in reglements %}
+        <h4>{{item.title}}</h4>
+        <p>{{item.content}}</p>
+        {% else %}
+        <p>Aucun contenu n'a été trouvé</p>
+        {% endfor %}
         <a href="" class="link white">Pour lire la suite ></a>
     </section>
     <section>
