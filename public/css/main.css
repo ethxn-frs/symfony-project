@@ -314,3 +314,25 @@ h3 {
   border-bottom: 1px solid #fff;
   transition: 400ms;
 }
+footer h3 {
+  font-size: 20px;
+  margin-bottom: 18px;
+}
+footer h4 {
+  font-size: 16px;
+  font-weight: bold;
+}
+footer p {
+  margin: 4px 0 12px 0;
+}
+footer .gap {
+  gap: 227px;
+  padding: 12px;
+}
+footer .gap a {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+footer .gap div .short-link {
+  gap: 30px;
+}

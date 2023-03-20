@@ -5,7 +5,7 @@
 {% block body %}
 
     <style>
-        form {
+        #search-tool {
             border-radius:13px;
             box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
             padding: 12px 32px;
@@ -13,16 +13,16 @@
             margin: 46px 0  30px 0;
 
         }
-        form > .d-flex {
+        #search-tool > .d-flex {
             gap:100px
         }
-        form input[type=text]{
+        #search-tool input[type=text]{
             width:120px;
             border:none;
             border-bottom: 2px solid #EFEDED;
             padding: 4px;
         }
-        form input[type=date]{
+        #search-tool input[type=date]{
             border:none
         }
         .search-parameter {
@@ -33,7 +33,7 @@
         }
     </style>
 
-    <form action="" method="post">
+    <form action="" method="post" id="search-tool">
         <div class="d-flex justify-start">
             <input type="submit" value="chercher">
             <div class="search-parameter d-flex">
