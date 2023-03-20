@@ -8,15 +8,17 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Content;
 use App\Form\ContentType;
 use App\Repository\ContentRepository;
+use App\Repository\MemberRepository;
 
 class AboutController extends AbstractController
 {
     #[Route('/about', name: 'about')]
-    public function index(ContentRepository $contentRepository): Response
+    public function index(ContentRepository $contentRepository, MemberRepository $memberRepository): Response
     {
         return $this->render('about/index.html.twig', [
             'controller_name' => 'AboutController',
             'reglements' => $contentRepository-> findBy(array('page' => "AboutPage", 'section' => 'Reglement' )),
+            'members' => $memberRepository->findAll()
         ]);
     }
 }
