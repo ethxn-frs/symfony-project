@@ -1,10 +1,42 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{{ asset('css/glider.min.css') }}">
+{% endblock %}
+
+
 {% block title %}Accueil CSE St Vincent{% endblock %}
 
 {% block body %}
 
-<div class="d-flex align-start">
+<style>
+.background-partnaire {
+  background-color: #C4C4C4;
+  padding: 24px 4px 12px 4px;
+  margin-bottom: 8px;
+}
+.glider-contain {
+  width: 174px;
+  height: 174px;
+}
+.glider-next {
+  right: -30px;
+}
+.glider-prev {
+  left: -30px;
+}
+.underline {
+  border-bottom: 1px solid #000000;
+}
+.tab section:last-child {
+  margin-bottom: 0;
+}
+.main-body {
+  margin-bottom: 80px;
+}
+</style>
+
+<div class="d-flex align-start main-body">
   <div class="tab">
     <section>
       <div class="survey">
@@ -47,7 +79,20 @@
     </section>
     <section>
       <h2>Nos partenaires</h2>
-      <a href="{{ path('partenaire') }}">Découvrir tous nos partenaires</a>
+      <div class="background-partnaire">
+        <div class="glider-contain">
+          <div class="glider">
+            <img src="{{ asset('assets/leonidas.jpg') }}" alt="">
+            <img src="{{ asset('assets/leonidas.jpg') }}" alt="">
+            <img src="{{ asset('assets/leonidas.jpg') }}" alt="">
+          </div>
+
+          <button aria-label="Previous" class="glider-prev">«</button>
+          <button aria-label="Next" class="glider-next">»</button>
+          <div role="tablist" class="dots"></div>
+        </div>
+      </div>
+      <a href="{{ path('partenaire') }}" class="t-center underline">Découvrir tous nos partenaires</a>
     </section>
   </div>
   <div class="main-content">
@@ -101,8 +146,24 @@
         <div class="d-flex justify-end">
           <a href="" class="text-right">En savoir plus ></a>
         </div>
-      </div> #}
+      </div>
+      <div class="ad">
+        <div class="d-flex justify-start">
+          <p class="status white">OFFRE PONCTUELLE</p>
+          <p class="date">Publié le 11 décembre 2022 - Du 10/12/2022 au 24/12/2022</p>
+        </div>
+        <p>Profitez de -20% sur une sélection de parfum, en partenariat avec l'enseigne Nocibé de Senlis.</p>
+        <p>Merci de vous rendre au bureau du CSE pour pouvor passer commande</p>
+        <p>Catalogue : tarifs.pdf</p>
+        <div class="d-flex justify-end">
+          <a href="" class="text-right">En savoir plus ></a>
+        </div>
+      </div>
     </section>
   </div>
 </div>
+
+<script src="{{ asset('js/glider.min.js') }}"></script>
+<script src="{{ asset('js/main.js') }}"></script>
+
 {% endblock %}
