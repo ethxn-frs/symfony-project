@@ -53,13 +53,31 @@
   <div class="main-content">
     <section>
       <div class="background presentation">
-        <h3 class="blue">CSE Lycée Saint-Vincent</h3>
-        <p>Nous vous souhaitons la bienvenue sur le site du comité social et économique du lycée Saint-Vincent à Senlis.</p>
+        {% for item in presentation %}
+        <h3 class="blue"> {{item.title}} </h3>
+        <p> {{item.content}} </p>
+        {% else %}
+        <p>Aucun contenu n'a été trouvé</p>
+        {% endfor %}
         <p>Découvrez <a href="">l'équipe</a> et <a href="">le rôle</a> et missions de votre CSE.</p>
       </div>
     </section>
     <section id="ads">
       <h4>Dernières offres ponctuelles</h4>
+
+      {% for item in ponctualOffers %}
+      <div class="ad">
+        <div class="d-flex justify-start">  
+          <p class="status white">OFFRE PONCTUELLE</p>
+          <p class="date">Publié le XXX - Du {{item.start_date.format('Y-m-d')}} au {{item.end_date.format('Y-m-d')}}</p>
+        </div>
+        <p>{{item.text}}</p>
+        <div class="d-flex justify-end">
+          <a href="" class="text-right">En savoir plus ></a>
+        </div>
+      </div>
+      {% endfor %}
+{# 
       <div class="ad">
         <div class="d-flex justify-start">
           <p class="status white">OFFRE PONCTUELLE</p>
@@ -83,22 +101,8 @@
         <div class="d-flex justify-end">
           <a href="" class="text-right">En savoir plus ></a>
         </div>
-      </div>
-      <div class="ad">
-        <div class="d-flex justify-start">
-          <p class="status white">OFFRE PONCTUELLE</p>
-          <p class="date">Publié le 11 décembre 2022 - Du 10/12/2022 au 24/12/2022</p>
-        </div>
-        <p>Profitez de -20% sur une sélection de parfum, en partenariat avec l'enseigne Nocibé de Senlis.</p>
-        <p>Merci de vous rendre au bureau du CSE pour pouvor passer commande</p>
-        <p>Catalogue : tarifs.pdf</p>
-        <div class="d-flex justify-end">
-          <a href="" class="text-right">En savoir plus ></a>
-        </div>
-      </div>
+      </div> #}
     </section>
   </div>
 </div>
-
-
 {% endblock %}

@@ -84,10 +84,10 @@ class Content
 
     public function getImage(): ?string
     {
-        return $this->$image;
+        return $this->image;
     }
 
-    public function setImage(?string $test): self
+    public function setImage(?string $image): self
     {
         $this->image = $image;
 

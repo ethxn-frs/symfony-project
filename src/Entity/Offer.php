@@ -23,11 +23,14 @@ class Offer
     #[ORM\Column(type: Types::TEXT)]
     private ?string $text = null;
 
-    #[ORM\Column(type: Types::DATE_MUTABLE)]
+    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $start_date = null;
 
-    #[ORM\Column(type: Types::DATE_MUTABLE)]
+    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $end_date = null;
+
+    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    private ?\DateTimeInterface $created_at = null;
 
     #[ORM\Column(nullable: true)]
     private ?int $min_place = null;
@@ -79,48 +82,61 @@ class Offer
         return $this;
     }
 
-    public function getStartDate(): ?\DateTimeInterface
+    public function getStart_Date(): ?\DateTimeInterface
     {
         return $this->start_date;
     }
 
-    public function setStartDate(\DateTimeInterface $start_date): self
+    public function setStart_Date(\DateTimeInterface $start_date): self
     {
         $this->start_date = $start_date;
 
         return $this;
     }
-
-    public function getEndDate(): ?\DateTimeInterface
+    
+    public function getEnd_Date(): ?\DateTimeInterface
     {
         return $this->end_date;
     }
 
-    public function setEndDate(\DateTimeInterface $end_date): self
+    public function setEnd_Date(\DateTimeInterface $end_date): self
     {
         $this->end_date = $end_date;
 
         return $this;
     }
 
-    public function getMinPlace(): ?int
+    public function getCreated_At(): ?\DateTimeInterface
+    {
+        return $this->create_at;
+    }
+
+    public function setCreated_At(\DateTimeInterface $created_at): self
+    {
+        $this->created_at = $created_at;
+
+        return $this;
+    }
+
+
+    public function getMin_Place(): ?int
     {
         return $this->min_place;
     }
 
-    public function setMinPlace(?int $min_place): self
+    public function setMin_Place(?int $min_place): self
     {
         $this->min_place = $min_place;
 
         return $this;
     }
 
-    public function getOrderNum(): ?int
+    public function getOrder_Num(): ?int
     {
         return $this->order_num;
     }
 
-    public function setOrderNum(int $order_num): self
+    public function setOrder_Num(int $order_num): self
     {
         $this->order_num = $order_num;
 
