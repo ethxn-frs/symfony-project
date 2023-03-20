@@ -10,6 +10,7 @@ use App\Form\OfferType;
 use App\Repository\OfferRepository;
 
 
+
 #[Route('/offers')]
 class OfferController extends AbstractController
 {

@@ -106,19 +106,6 @@ class Offer
         return $this;
     }
 
-    public function getCreated_At(): ?\DateTimeInterface
-    {
-        return $this->create_at;
-    }
-
-    public function setCreated_At(\DateTimeInterface $created_at): self
-    {
-        $this->created_at = $created_at;
-
-        return $this;
-    }
-
-
     public function getMin_Place(): ?int
     {
         return $this->min_place;
