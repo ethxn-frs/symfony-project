@@ -23,6 +23,9 @@ class Offer
     #[ORM\Column(type: Types::TEXT)]
     private ?string $text = null;
 
+    #[ORM\Column(type: Types::TEXT)]
+    private ?string $keyword = null;
+
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $start_date = null;
 
@@ -140,5 +143,9 @@ class Offer
         $this->status = $status;
 
         return $this;
+    }
+    public function getKeyword(): ?string
+    {
+        return $this->keyword;
     }
 }
