@@ -22,6 +22,9 @@
 .glider-next {
   right: -30px;
 }
+.glider-slide {
+  height: 174px !important;
+}
 .glider-prev {
   left: -30px;
 }
@@ -82,9 +85,13 @@
       <div class="background-partnaire">
         <div class="glider-contain">
           <div class="glider">
+
+              {% for partner in partners %}
+                <img src="{{ asset( 'assets/partner/' ~ partner.image) }}"/>
+              {% endfor %}
+            {# <img src="{{ asset('assets/leonidas.jpg') }}" alt="">
             <img src="{{ asset('assets/leonidas.jpg') }}" alt="">
-            <img src="{{ asset('assets/leonidas.jpg') }}" alt="">
-            <img src="{{ asset('assets/leonidas.jpg') }}" alt="">
+            <img src="{{ asset('assets/leonidas.jpg') }}" alt=""> #}
           </div>
 
           <button aria-label="Previous" class="glider-prev">«</button>

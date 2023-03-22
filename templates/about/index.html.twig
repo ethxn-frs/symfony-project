@@ -53,10 +53,10 @@
     <section class="reglement">
         <h3>Reglement du CSE</h3>
         {% for item in reglements %}
-        <h4>{{item.title}}</h4>
-        <p>{{item.content}}</p>
+            <h4>{{item.title}}</h4>
+            <p>{{item.content}}</p>
         {% else %}
-        <p>Aucun contenu n'a été trouvé</p>
+            <p>Aucun contenu n'a été trouvé</p>
         {% endfor %}
         <a href="" class="link white">Pour lire la suite ></a>
     </section>

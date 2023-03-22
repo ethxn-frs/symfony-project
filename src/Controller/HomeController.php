@@ -11,17 +11,24 @@ use App\Repository\ContentRepository;
 use App\Entity\Offer;
 use App\Form\OfferType;
 use App\Repository\OfferRepository;
+use App\Repository\PartnershipRepository;
 
 class HomeController extends AbstractController
 {
     #[Route('/', name: 'home')]
-    public function index(ContentRepository $contentRepository, OfferRepository $offerRepository): Response
+    public function index(ContentRepository $contentRepository, OfferRepository $offerRepository, PartnershipRepository $partnerRepository): Response
     {
         return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
             'presentation' => $contentRepository-> findBy(array('page' => 'HomePage', 'section' => "presentation" )),
             'ponctualOffers' => $offerRepository-> findBy(array('status' => '2')),
             'perpetualsOffers' => $offerRepository-> findBy(array('status' => '1')),
+            'partners' => $partnerRepository->findBy(
+                array(),
+                array('id' => 'DESC'),
+                4,
+                0
+            )
         ]);
     }
     
