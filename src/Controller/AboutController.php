@@ -14,7 +14,8 @@ use App\Repository\ActivityRepository;
 class AboutController extends AbstractController
 {
     #[Route('/about', name: 'about')]
-    public function index(ContentRepository $contentRepository, MemberRepository $memberRepository, ActivityRepository $activityRepository): Response
+    public function index(ContentRepository $contentRepository, MemberRepository 
+    $memberRepository, ActivityRepository $activityRepository): Response
     {
         return $this->render('about/index.html.twig', [
             'controller_name' => 'AboutController',
