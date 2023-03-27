@@ -85,36 +85,36 @@ class Offer
         return $this;
     }
 
-    public function getdate_start(): ?\DateTimeInterface
+    public function getDate_start(): ?\DateTimeInterface
     {
         return $this->date_start;
     }
 
-    public function setdate_start(\DateTimeInterface $date_start): self
+    public function setDate_start(\DateTimeInterface $date_start): self
     {
         $this->date_start = $date_start;
 
         return $this;
     }
     
-    public function getdate_end(): ?\DateTimeInterface
+    public function getDate_end(): ?\DateTimeInterface
     {
         return $this->date_end;
     }
 
-    public function setdate_end(\DateTimeInterface $date_end): self
+    public function setDate_end(\DateTimeInterface $date_end): self
     {
         $this->date_end = $date_end;
 
         return $this;
     }
     
-    public function getcreation_date(): ?\DateTimeInterface
+    public function getCreation_date(): ?\DateTimeInterface
     {
         return $this->creation_date;
     }
 
-    public function setcreation_date(\DateTimeInterface $creation_date): self
+    public function setCreation_date(\DateTimeInterface $creation_date): self
     {
         $this->creation_date = $creation_date;
 

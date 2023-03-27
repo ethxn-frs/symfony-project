@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Offer;
 use App\Form\OfferType;
@@ -28,8 +29,8 @@ class OfferController extends AbstractController
     #[Route('/new', name: 'app_offer_new', methods: ['GET', 'POST'])]
     public function new(Request $request, OfferRepository $offerRepository): Response
     {
-        $offer = new Content();
-        $form = $this->createForm(ContentType::class, $offer);
+        $offer = new Offer();
+        $form = $this->createForm(OfferType::class, $offer);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

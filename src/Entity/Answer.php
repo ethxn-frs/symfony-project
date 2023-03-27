@@ -6,17 +6,18 @@ use App\Repository\ResponseRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: ResponseRepository::class)]
-class Response
+class Answer
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column]
-    private ?int $id_question = null;
+    #[ORM\ManyToOne(inversedBy: 'responses')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Survey $survey = null;
 
-    #[ORM\Column(length: 200)]
+    #[ORM\Column(length: 255)]
     private ?string $text = null;
 
     public function getId(): ?int
@@ -24,14 +25,14 @@ class Response
         return $this->id;
     }
 
-    public function getIdQuestion(): ?int
+    public function getSurvey(): ?Survey
     {
-        return $this->id_question;
+        return $this->survey;
     }
 
-    public function setIdQuestion(int $id_question): self
+    public function setSurvey(?Survey $survey): self
     {
-        $this->id_question = $id_question;
+        $this->survey = $survey;
 
         return $this;
     }
