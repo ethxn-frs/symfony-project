@@ -27,13 +27,13 @@ class Offer
     private ?string $keyword = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    private ?\DateTimeInterface $start_date = null;
+    private ?\DateTimeInterface $date_start = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    private ?\DateTimeInterface $end_date = null;
+    private ?\DateTimeInterface $date_end = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    private ?\DateTimeInterface $created_at = null;
+    private ?\DateTimeInterface $creation_date = null;
 
     #[ORM\Column(nullable: true)]
     private ?int $min_place = null;
@@ -85,26 +85,38 @@ class Offer
         return $this;
     }
 
-    public function getStart_Date(): ?\DateTimeInterface
+    public function getdate_start(): ?\DateTimeInterface
     {
-        return $this->start_date;
+        return $this->date_start;
     }
 
-    public function setStart_Date(\DateTimeInterface $start_date): self
+    public function setdate_start(\DateTimeInterface $date_start): self
     {
-        $this->start_date = $start_date;
+        $this->date_start = $date_start;
 
         return $this;
     }
     
-    public function getEnd_Date(): ?\DateTimeInterface
+    public function getdate_end(): ?\DateTimeInterface
     {
-        return $this->end_date;
+        return $this->date_end;
     }
 
-    public function setEnd_Date(\DateTimeInterface $end_date): self
+    public function setdate_end(\DateTimeInterface $date_end): self
     {
-        $this->end_date = $end_date;
+        $this->date_end = $date_end;
+
+        return $this;
+    }
+    
+    public function getcreation_date(): ?\DateTimeInterface
+    {
+        return $this->creation_date;
+    }
+
+    public function setcreation_date(\DateTimeInterface $creation_date): self
+    {
+        $this->creation_date = $creation_date;
 
         return $this;
     }
