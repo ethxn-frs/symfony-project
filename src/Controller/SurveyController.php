@@ -5,9 +5,11 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Request;
 use App\Entity\Survey;
 use App\Entity\Answer;
 use App\Repository\SurveyRepository;
+use App\Repository\AnswerRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
@@ -18,35 +20,67 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 #[Route('/survey')]
 class SurveyController extends AbstractController
 {
-    #[Route('/', name: 'survey_index', methods: ['GET'])]
-    public function index(EntityManagerInterface $entityManager ): Response
+    #[Route('/', name: 'app_survey_index', methods: ['GET'])]
+    public function index(SurveyRepository  $surveyRepository, AnswerRepository $answerRepository): Response
+    {
+        return $this->render('survey/index.html.twig', [
+            'surveys' => $surveyRepository->findAll()
+        ]);
+    }
+
+    #[Route('/new', name: 'app_survey_new', methods: ['GET', 'POST'])]
+    public function new(Request $request, SurveyRepository $surveyRepository, AnswerRepository $answerRepository): Response
     {
         $survey = new Survey();
-        $survey->setQuestion('Hm Compt do u have ?');
-        $survey->setStatus(1);
-
         $answer = new Answer();
-        $answer->setText('1');
+        $form = $this->createForm(SurveyType::class, $survey);
+        $form->handleRequest($request);
 
-        // relates this answer to the survey
-        $answer->setSurvey($survey);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $surveyRepository->save($survey, true);
 
-        $entityManager->persist($survey);
-        $entityManager->persist($answer);
-        $entityManager->flush();
+            return $this->redirectToRoute('app_survey_index', [], Response::HTTP_SEE_OTHER);
+        }
 
-        return new Response(
-            'Saved new answer with id: '.$answer->getId()
-            .' and new survey with id: '.$survey->getId()
-        );
+        return $this->renderForm('survey/new.html.twig', [
+            'survey' => $survey,
+            'form' => $form,
+        ]);
     }
 
-    #[Route('/test', name: 'survey_test', methods: ['GET'])]
-    public function ShowSurvey(SurveyRepository  $surveyRepository): Response
+    #[Route('/{id}', name: 'app_survey_show', methods: ['GET'])]
+    public function show(Survey $survey): Response
     {
-        $survey = $surveyRepository->findAll();
-
-        $answers = $survey->getAnswers();
+        return $this->render('survey/show.html.twig', [
+            'survey' => $survey,
+        ]);
     }
 
+        #[Route('/{id}/edit', name: 'app_survey_edit', methods: ['GET', 'POST'])]
+    public function edit(Request $request, Survey $survey, SurveyRepository $surveyRepository): Response
+    {
+        $form = $this->createForm(SurveyType::class, $survey);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $surveyRepository->save($survey, true);
+
+            return $this->redirectToRoute('app_survey_index', [], Response::HTTP_SEE_OTHER);
+        }
+
+        return $this->renderForm('survey/edit.html.twig', [
+            'survey' => $survey,
+            'form' => $form,
+        ]);
+    }
+
+    #[Route('/{id}', name: 'app_survey_delete', methods: ['POST'])]
+    public function delete(Request $request, Survey $survey, SurveyRepository $surveyRepository): Response
+    {
+        if ($this->isCsrfTokenValid('delete'.$survey->getId(), $request->request->get('_token'))) {
+            $surveyRepository->remove($survey, true);
+        }
+
+        return $this->redirectToRoute('app_survey_index', [], Response::HTTP_SEE_OTHER);
+    }
 }

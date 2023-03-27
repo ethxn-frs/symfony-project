@@ -13,7 +13,7 @@ class Answer
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\ManyToOne(inversedBy: 'responses')]
+    #[ORM\ManyToOne(inversedBy: 'answers', targetEntity: Survey::class)]
     #[ORM\JoinColumn(nullable: false)]
     private ?Survey $survey = null;
 

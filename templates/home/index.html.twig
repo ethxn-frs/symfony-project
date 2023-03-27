@@ -47,20 +47,16 @@
           <h3 class="t-center">Votre avis compte</h3>
         </div>
         <div class="body">
-          <p class="t-center question">Pour quel parc d'attraction  souhaiteriez-vous obtenir des prix ?</p>
+        {% for item in survey %}
+          <p class="t-center question">{{ item.question }}</p>
+          {% for question in item.answers %}
           <div class="d-flex justify-start">
-            <input type="radio" name="test" id="" value="le parc asterix"> 
-            <label>le parc asterix</label>
+            <input type="radio" name="test" id="{{question.id}}" value="{{question.text}}"> 
+            <label>{{question.text}}</label>
           </div>
-          <div class="d-flex justify-start">
-            <input type="radio" name="test" id="" value="le parc disneyland"> 
-            <label>le parc disneyland</label>
-          </div>
-          <div class="d-flex justify-start">
-            <input type="radio" name="test" id="" value="le futoroscope"> 
-            <label>le futoroscope</label>
-          </div>
+          {% endfor %}
         </div>
+                {% endfor %}
         <div class="d-flex background white call-action">
           <a class="btn t-center" href="#">Voir les reponses</a>
           <a class="btn t-center" href="#">Valider</a>

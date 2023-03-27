@@ -58,7 +58,7 @@ class Survey
         return $this;
     }
     /**
-     * @return Collection<int, Response>
+     * @return Collection<int, Answer>
      */
     public function getAnswers(): Collection
     {
@@ -71,7 +71,6 @@ class Survey
             $this->answers->add($answer);
             $answer->setSurvey($this);
         }
-
         return $this;
     }
 
