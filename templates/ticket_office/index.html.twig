@@ -45,64 +45,19 @@
 
     <h3>Billeterie</h3>
 
-    <div class="ad">
-        <div class="d-flex justify-start">
-          <p class="status white">OFFRE PERMANENTE</p>
-          <p class="date">Publié le 11 décembre 2022 - Du 10/12/2022 au 24/12/2022</p>
+          {% for item in offers %}
+      <div class="ad">
+        <div class="d-flex justify-start">  
+          <p class="status white">{{item.Status}}</p>
+          <p class="date">Publiée le {{item.creationDate.format('Y-m-d')}} - Du {{item.dateStart.format('Y-m-d')}} au {{item.dateStart.format('Y-m-d')}}</p>
         </div>
-        <p>Profitez de -20% sur une sélection de parfum, en partenariat avec l'enseigne Nocibé de Senlis.</p>
-        <p>Merci de vous rendre au bureau du CSE pour pouvor passer commande</p>
-        <p>Catalogue : tarifs.pdf</p>
+        <p>{{item.name}}</p>
+        <p>{{item.text}}</p>
         <div class="d-flex justify-end">
           <a href="" class="text-right">En savoir plus ></a>
         </div>
-    </div>
-    <div class="ad">
-        <div class="d-flex justify-start">
-          <p class="status white">OFFRE PERMANENTE</p>
-          <p class="date">Publié le 11 décembre 2022 - Du 10/12/2022 au 24/12/2022</p>
-        </div>
-        <p>Profitez de -20% sur une sélection de parfum, en partenariat avec l'enseigne Nocibé de Senlis.</p>
-        <p>Merci de vous rendre au bureau du CSE pour pouvor passer commande</p>
-        <p>Catalogue : tarifs.pdf</p>
-        <div class="d-flex justify-end">
-          <a href="" class="text-right">En savoir plus ></a>
-        </div>
-    </div>
-     <div class="ad">
-        <div class="d-flex justify-start">
-          <p class="status white">OFFRE PERMANENTE</p>
-          <p class="date">Publié le 11 décembre 2022 - Du 10/12/2022 au 24/12/2022</p>
-        </div>
-        <p>Profitez de -20% sur une sélection de parfum, en partenariat avec l'enseigne Nocibé de Senlis.</p>
-        <p>Merci de vous rendre au bureau du CSE pour pouvor passer commande</p>
-        <p>Catalogue : tarifs.pdf</p>
-        <div class="d-flex justify-end">
-          <a href="" class="text-right">En savoir plus ></a>
-        </div>
-    </div>
-     <div class="ad">
-        <div class="d-flex justify-start">
-          <p class="status white">OFFRE PERMANENTE</p>
-          <p class="date">Publié le 11 décembre 2022 - Du 10/12/2022 au 24/12/2022</p>
-        </div>
-        <p>Profitez de -20% sur une sélection de parfum, en partenariat avec l'enseigne Nocibé de Senlis.</p>
-        <p>Merci de vous rendre au bureau du CSE pour pouvor passer commande</p>
-        <p>Catalogue : tarifs.pdf</p>
-        <div class="d-flex justify-end">
-          <a href="" class="text-right">En savoir plus ></a>
-        </div>
-    </div>
-     <div class="ad">
-        <div class="d-flex justify-start">
-          <p class="status white">OFFRE PERMANENTE</p>
-          <p class="date">Publié le 11 décembre 2022 - Du 10/12/2022 au 24/12/2022</p>
-        </div>
-        <p>Profitez de -20% sur une sélection de parfum, en partenariat avec l'enseigne Nocibé de Senlis.</p>
-        <p>Merci de vous rendre au bureau du CSE pour pouvor passer commande</p>
-        <p>Catalogue : tarifs.pdf</p>
-        <div class="d-flex justify-end">
-          <a href="" class="text-right">En savoir plus ></a>
-        </div>
-    </div>
+      </div>
+      {% else %}
+        <p>Aucune Offre n'a été trouvée.</p>
+      {% endfor %}
 {% endblock %}

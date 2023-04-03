@@ -2,34 +2,27 @@
 
 namespace App\Form;
 
-use App\Entity\Offer;
+use App\Entity\Survey;
+use App\Entity\Answer;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\D    ;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class OfferType extends AbstractType
+class SurveyType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('name')
-            ->add('image')
-            ->add('text')
-            ->add('dateStart')
-            ->add('dateStart')
-            ->add('creationDate')
-            ->add('minPlace')
-            ->add('orderNum')
+            ->add('question')
+            ->add('answer')
             ->add('status')
-            ->add('keyword')
         ;
     }
 
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => Offer::class,
+            'data_class' => Survey::class,
         ]);
     }
 }
