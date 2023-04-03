@@ -37,6 +37,11 @@ class Answer
         return $this;
     }
 
+    public function __toString()
+    {
+        return $this->getText(); // retourne le texte de la réponse
+    }
+
     public function getText(): ?string
     {
         return $this->text;

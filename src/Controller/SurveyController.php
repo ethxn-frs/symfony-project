@@ -21,6 +21,13 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 #[Route('/survey')]
 class SurveyController extends AbstractController
 {
+    private $entityManager;
+
+    public function __construct(EntityManagerInterface $entityManager)
+    {
+        $this->entityManager = $entityManager;
+    }
+
     #[Route('/', name: 'app_survey_index', methods: ['GET'])]
     public function index(SurveyRepository  $surveyRepository, AnswerRepository $answerRepository): Response
     {
@@ -32,21 +39,38 @@ class SurveyController extends AbstractController
     #[Route('/new', name: 'app_survey_new', methods: ['GET', 'POST'])]
     public function new(Request $request, SurveyRepository $surveyRepository, AnswerRepository $answerRepository): Response
     {
+        // $survey = new Survey();
+        // $answer = new Answer();
+        // $form = $this->createForm(SurveyType::class, $survey);
+        // $form->handleRequest($request);
+
+        // if ($form->isSubmitted() && $form->isValid()) {
+        //     $surveyRepository->save($survey, true);
+
+        //     return $this->redirectToRoute('app_survey_index', [], Response::HTTP_SEE_OTHER);
+        // }
+
+        // return $this->renderForm('survey/new.html.twig', [
+        //     'survey' => $survey,
+        //     'answer' => $answer,
+        //     'form' => $form,
+        // ]);
         $survey = new Survey();
-        $answer = new Answer();
+        $survey->addAnswer(new Answer());
+
         $form = $this->createForm(SurveyType::class, $survey);
+
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $surveyRepository->save($survey, true);
+            $this->entityManager->persist($survey);
+            $this->entityManager->flush();
 
-            return $this->redirectToRoute('app_survey_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_survey_show', ['id' => $survey->getId()]);
         }
 
-        return $this->renderForm('survey/new.html.twig', [
-            'survey' => $survey,
-            'answer' => $answer,
-            'form' => $form,
+        return $this->render('survey/new.html.twig', [
+            'form' => $form->createView(),
         ]);
     }
 
