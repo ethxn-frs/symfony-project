@@ -4,7 +4,8 @@
 
 {% block body %}
 
-<h2>Offres permanantes</h2>
+<div class="bodyPage">
+    <h2>Offres permanantes</h2>
 
         <div class="array container">
             <div class="header-array">
@@ -57,13 +58,13 @@
                         <p>{{ item.text }}</p>
                     </div>
                     <div class="col">
-                        <p>{{ item.dateStart.format('Y-m-d') }}</p>
+                        <p>{{ item.dateStart.format('Y-m-d H:i:s') }}</p>
                     </div>
                     <div class="col">
-                        <p>{{ item.dateStart.format('Y-m-d') }}</p>
+                        <p>{{ item.dateEnd.format('Y-m-d H:i:s') }}</p>
                     </div>
                     <div class="col">
-                        <p>{{ item.creationDate.format('Y-m-d') }}</p>
+                        <p>{{ item.creationDate.format('Y-m-d H:i:s') }}</p>
                     </div>
                     <div class="col">
                         <p>{{ item.minPlace }}</p>
@@ -145,7 +146,7 @@
                         <p>{{ item.dateStart.format('Y-m-d') }}</p>
                     </div>
                     <div class="col">
-                        <p>{{ item.dateStart.format('Y-m-d') }}</p>
+                        <p>{{ item.dateEnd.format('Y-m-d') }}</p>
                     </div>
                     <div class="col">
                         <p>{{ item.creationDate.format('Y-m-d') }}</p>
@@ -173,5 +174,5 @@
                 <a class="btn" href="{{ path('app_offer_new') }}">Créer une offre Ponctuelle</a>
             </div>
         </div>
-
+</div>
 {% endblock %}

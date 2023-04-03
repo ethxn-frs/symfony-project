@@ -4,7 +4,6 @@ namespace App\Form;
 
 use App\Entity\Offer;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\D    ;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -17,7 +16,7 @@ class OfferType extends AbstractType
             ->add('image')
             ->add('text')
             ->add('dateStart')
-            ->add('dateStart')
+            ->add('dateEnd')
             ->add('creationDate')
             ->add('minPlace')
             ->add('orderNum')
