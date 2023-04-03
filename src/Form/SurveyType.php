@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Survey;
+use App\Entity\Answer;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -13,6 +14,7 @@ class SurveyType extends AbstractType
     {
         $builder
             ->add('question')
+            ->add('answer')
             ->add('status')
         ;
     }

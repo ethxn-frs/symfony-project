@@ -56,7 +56,7 @@
           </div>
           {% endfor %}
         </div>
-                {% endfor %}
+        {% endfor %}
         <div class="d-flex background white call-action">
           <a class="btn t-center" href="#">Voir les reponses</a>
           <a class="btn t-center" href="#">Valider</a>
@@ -117,50 +117,17 @@
       <div class="ad">
         <div class="d-flex justify-start">  
           <p class="status white">OFFRE PONCTUELLE</p>
-          <p class="date">Publiée le {{item.creation_date.format('Y-m-d')}} - Du {{item.date_start.format('Y-m-d')}} au {{item.date_end.format('Y-m-d')}}</p>
+          <p class="date">Publiée le {{item.creationDate.format('Y-m-d')}} - Du {{item.dateStart.format('Y-m-d')}} au {{item.dateStart.format('Y-m-d')}}</p>
         </div>
+        <p>{{item.name}}</p>
         <p>{{item.text}}</p>
         <div class="d-flex justify-end">
           <a href="" class="text-right">En savoir plus ></a>
         </div>
       </div>
+      {% else %}
+        <p>Aucune Offre n'a été trouvée.</p>
       {% endfor %}
-      <div class="ad">
-        <div class="d-flex justify-start">
-          <p class="status white">OFFRE PONCTUELLE</p>
-          <p class="date">Publié le 11 décembre 2022 - Du 10/12/2022 au 24/12/2022</p>
-        </div>
-        <p>Profitez de -20% sur une sélection de parfum, en partenariat avec l'enseigne Nocibé de Senlis.</p>
-        <p>Merci de vous rendre au bureau du CSE pour pouvor passer commande</p>
-        <p>Catalogue : tarifs.pdf</p>
-        <div class="d-flex justify-end">
-          <a href="" class="text-right">En savoir plus ></a>
-        </div>
-      </div>
-      <div class="ad">
-        <div class="d-flex justify-start">
-          <p class="status white">OFFRE PONCTUELLE</p>
-          <p class="date">Publié le 11 décembre 2022 - Du 10/12/2022 au 24/12/2022</p>
-        </div>
-        <p>Profitez de -20% sur une sélection de parfum, en partenariat avec l'enseigne Nocibé de Senlis.</p>
-        <p>Merci de vous rendre au bureau du CSE pour pouvor passer commande</p>
-        <p>Catalogue : tarifs.pdf</p>
-        <div class="d-flex justify-end">
-          <a href="" class="text-right">En savoir plus ></a>
-        </div>
-      </div>
-      <div class="ad">
-        <div class="d-flex justify-start">
-          <p class="status white">OFFRE PONCTUELLE</p>
-          <p class="date">Publié le 11 décembre 2022 - Du 10/12/2022 au 24/12/2022</p>
-        </div>
-        <p>Profitez de -20% sur une sélection de parfum, en partenariat avec l'enseigne Nocibé de Senlis.</p>
-        <p>Merci de vous rendre au bureau du CSE pour pouvor passer commande</p>
-        <p>Catalogue : tarifs.pdf</p>
-        <div class="d-flex justify-end">
-          <a href="" class="text-right">En savoir plus ></a>
-        </div>
-      </div>
     </section>
   </div>
 </div>

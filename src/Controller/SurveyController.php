@@ -8,6 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use App\Entity\Survey;
 use App\Entity\Answer;
+use App\Form\SurveyType;
 use App\Repository\SurveyRepository;
 use App\Repository\AnswerRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -44,6 +45,7 @@ class SurveyController extends AbstractController
 
         return $this->renderForm('survey/new.html.twig', [
             'survey' => $survey,
+            'answer' => $answer,
             'form' => $form,
         ]);
     }

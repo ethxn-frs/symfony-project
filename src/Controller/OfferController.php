@@ -23,6 +23,7 @@ class OfferController extends AbstractController
             'controller_name' => 'OfferController',
             'permanantesOffers' =>  $offerRepository-> findBy(array('status' => '1')),
             'ponctualsOffers' =>  $offerRepository-> findBy(array('status' => '2')),
+            'offers' => $offerRepository->findAll(),
         ]);
     }
 

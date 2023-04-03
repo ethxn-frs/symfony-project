@@ -23,23 +23,23 @@ class Offer
     #[ORM\Column(type: Types::TEXT)]
     private ?string $text = null;
 
+    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    private ?\DateTimeInterface $dateStart = null;
+
+    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    private ?\DateTimeInterface $dateEnd = null;
+
+    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    private ?\DateTimeInterface $creationDate = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?int $minPlace = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?int $orderNum = null;
+
     #[ORM\Column(type: Types::TEXT)]
     private ?string $keyword = null;
-
-    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    private ?\DateTimeInterface $date_start = null;
-
-    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    private ?\DateTimeInterface $date_end = null;
-
-    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    private ?\DateTimeInterface $creation_date = null;
-
-    #[ORM\Column(nullable: true)]
-    private ?int $min_place = null;
-
-    #[ORM\Column(nullable: true)]
-    private ?int $order_num = null;
 
     #[ORM\Column]
     private ?int $status = null;
@@ -85,62 +85,62 @@ class Offer
         return $this;
     }
 
-    public function getDate_start(): ?\DateTimeInterface
+    public function getDateStart(): ?\DateTimeInterface
     {
-        return $this->date_start;
+        return $this->dateStart;
     }
 
-    public function setDate_start(\DateTimeInterface $date_start): self
+    public function setDateStart(\DateTimeInterface $dateStart): self
     {
-        $this->date_start = $date_start;
+        $this->dateStart = $dateStart;
 
         return $this;
     }
     
-    public function getDate_end(): ?\DateTimeInterface
+    public function getDateEnd(): ?\DateTimeInterface
     {
-        return $this->date_end;
+        return $this->dateEnd;
     }
 
-    public function setDate_end(\DateTimeInterface $date_end): self
+    public function setDateEnd(\DateTimeInterface $dateEnd  ): self
     {
-        $this->date_end = $date_end;
+        $this->dateStart = $dateEnd;
 
         return $this;
     }
     
-    public function getCreation_date(): ?\DateTimeInterface
+    public function getCreationDate(): ?\DateTimeInterface
     {
-        return $this->creation_date;
+        return $this->creationDate;
     }
 
-    public function setCreation_date(\DateTimeInterface $creation_date): self
+    public function setCreationDate(\DateTimeInterface $creationDate): self
     {
-        $this->creation_date = $creation_date;
+        $this->creationDate = $creationDate;
 
         return $this;
     }
 
-    public function getMin_Place(): ?int
+    public function getMinPlace(): ?int
     {
-        return $this->min_place;
+        return $this->minPlace;
     }
 
-    public function setMin_Place(?int $min_place): self
+    public function setMinPlace(?int $minPlace): self
     {
-        $this->min_place = $min_place;
+        $this->minPlace = $minPlace;
 
         return $this;
     }
 
-    public function getOrder_Num(): ?int
+    public function getOrderNum(): ?int
     {
-        return $this->order_num;
+        return $this->orderNum;
     }
 
-    public function setOrder_Num(int $order_num): self
+    public function setOrderNum(int $orderNum): self
     {
-        $this->order_num = $order_num;
+        $this->orderNum = $orderNum;
 
         return $this;
     }
@@ -156,8 +156,16 @@ class Offer
 
         return $this;
     }
+
     public function getKeyword(): ?string
     {
         return $this->keyword;
+    }
+
+    public function setKeyword(string $keyword): self
+    {
+        $this->keyword = $keyword;
+
+        return $this;
     }
 }
