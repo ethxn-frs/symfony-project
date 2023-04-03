@@ -25,12 +25,16 @@
             </tr>
             <tr>
                 <th>Debut</th>
-                <td>{{ offer.dateStart.format('Y-m-d') }}</td>
+                <td>{{ offer.dateStart.format('Y-m-d H:i:s') }}</td>
             </tr>
             <tr>
                 <th>Fin</th>
-                <td>{{ offer.dateStart.format('Y-m-d') }}</td>
+                <td>{{ offer.dateEnd.format('Y-m-d H:i:s') }}</td>
 
+            </tr>
+            <tr>
+                <th>Date de création</th>
+                <td>{{ offer.creationDate.format('Y-m-d H:i:s') }}</td>
             </tr>
             <tr>
                 <th>Minimum de places</th>
@@ -39,7 +43,6 @@
             <tr>
                 <th>Ordre d'affichage   </th>
                 <td>{{ offer.orderNum }}</td>
-                <td>{{ offer.dateStart }}</td>
             </tr>
             <tr>
                 <th>Status</th>
