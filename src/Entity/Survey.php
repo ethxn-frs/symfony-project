@@ -21,7 +21,7 @@ class Survey
     #[ORM\Column]
     private ?bool $status = null;
 
-    #[ORM\OneToMany(mappedBy: 'survey', targetEntity: Answer::class)]
+    #[ORM\OneToMany(mappedBy: 'survey', targetEntity: Answer::class, cascade: ['persist','remove'])]
     private Collection $answers;
 
     public function __construct()
@@ -33,6 +33,12 @@ class Survey
     {
         return $this->id;
     }
+
+    public function __toString()
+    {
+        return $this->getQuestion(); // retourne la question du sondage
+    }
+
 
     public function getQuestion(): ?string
     {
