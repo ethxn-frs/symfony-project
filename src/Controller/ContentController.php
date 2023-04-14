@@ -73,7 +73,6 @@ class ContentController extends AbstractController
         if ($this->isCsrfTokenValid('delete'.$content->getId(), $request->request->get('_token'))) {
             $contentRepository->remove($content, true);
         }
-
         return $this->redirectToRoute('app_content_index', [], Response::HTTP_SEE_OTHER);
     }
 }
