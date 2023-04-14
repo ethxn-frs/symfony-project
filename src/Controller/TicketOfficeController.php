@@ -15,7 +15,6 @@ class TicketOfficeController extends AbstractController
     public function index(OfferRepository $offerRepository): Response
     {
         return $this->render('ticket_office/index.html.twig', [
-            'controller_name' => 'TicketOfficeController',
             'offers' => $offerRepository->findAll(),
         ]);
     }

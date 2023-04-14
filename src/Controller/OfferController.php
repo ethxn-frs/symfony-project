@@ -21,7 +21,6 @@ class OfferController extends AbstractController
     public function index(OfferRepository $offerRepository): Response
     {
         return $this->render('offer/index.html.twig', [
-            'controller_name' => 'OfferController',
             'permanantesOffers' =>  $offerRepository-> findBy(array('status' => '1')),
             'ponctualsOffers' =>  $offerRepository-> findBy(array('status' => '2')),
 
