@@ -7,7 +7,8 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Offer;
-use App\Form\OfferType;
+use App\Form\PunctualOfferType;
+use App\Form\PerpetualOfferType;
 use App\Repository\OfferRepository;
 
 
@@ -27,11 +28,30 @@ class OfferController extends AbstractController
         ]);
     }
 
-    #[Route('/new', name: 'app_offer_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, OfferRepository $offerRepository): Response
+    #[Route('/new/punctualoffer', name: 'app_punctual_offer_new', methods: ['GET', 'POST'])]
+    public function newPunctualOffer(Request $request, OfferRepository $offerRepository): Response
     {
         $offer = new Offer();
-        $form = $this->createForm(OfferType::class, $offer);
+        $form = $this->createForm(PunctualOfferType::class, $offer);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $offerRepository->save($offer, true);
+
+            return $this->redirectToRoute('app_offer_index', [], Response::HTTP_SEE_OTHER);
+        }
+
+        return $this->renderForm('offer/new.html.twig', [
+            'offer' => $offer,
+            'form' => $form,
+        ]);
+    }
+
+    #[Route('/new/perpetualoffer', name: 'app_perpetual_offer_new', methods: ['GET', 'POST'])]
+    public function newPerpetualOffer(Request $request, OfferRepository $offerRepository): Response
+    {
+        $offer = new Offer();
+        $form = $this->createForm(PerpetualOfferType::class, $offer);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
