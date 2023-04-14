@@ -32,4 +32,16 @@ class Newsletter
 
         return $this;
     }
+
+    public function isPost(NewsletterRepository $newsletterRepository): self
+    {
+        if($_POST) 
+        {
+            $newsletter = new newsletter();
+            $newsletter->setEmail($_POST['email']);
+            $newsletterRepository->save($newsletter, true);
+
+            return $this->redirectToRoute('home', [], Response::HTTP_SEE_OTHER);    
+        }
+    }
 }
