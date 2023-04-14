@@ -47,20 +47,23 @@
           <h3 class="t-center">Votre avis compte</h3>
         </div>
         <div class="body">
-        {% for item in survey %}
-          <p class="t-center question">{{ item.question }}</p>
-          {% for question in item.answers %}
-          <div class="d-flex justify-start">
-            <input type="radio" name="test" id="{{question.id}}" value="{{question.text}}"> 
-            <label>{{question.text}}</label>
-          </div>
-          {% endfor %}
-        </div>
-        {% endfor %}
-        <div class="d-flex background white call-action">
-          <a class="btn t-center" href="#">Voir les reponses</a>
-          <a class="btn t-center" href="#">Valider</a>
-        </div>
+          <form action="answer/addvote" method="get">
+            {% for item in survey %}
+              <p class="t-center question">{{ item.question }}</p>
+              {% for question in item.answers %}
+              <div class="d-flex justify-start">
+                <input type="radio" name="answer" id="{{question.id}}" value="{{question.id}}"> 
+                <label>{{question.text}}</label>
+              </div>
+              {% endfor %}
+            </div>
+            {% endfor %}
+            <div class="d-flex background white call-action">
+              <a class="btn t-center" href="#">Voir les reponses</a>
+              <button class="btn t-center" type="submit">Valider</button>
+              {# <a class="btn t-center" href="#">Valider</a> #}
+            </div>
+          </form>
       </div>
     </section>
     <section>
@@ -85,9 +88,6 @@
               {% for partner in partners %}
                 <img src="{{ asset( 'assets/partner/' ~ partner.image) }}"/>
               {% endfor %}
-            {# <img src="{{ asset('assets/leonidas.jpg') }}" alt="">
-            <img src="{{ asset('assets/leonidas.jpg') }}" alt="">
-            <img src="{{ asset('assets/leonidas.jpg') }}" alt=""> #}
           </div>
 
           <button aria-label="Previous" class="glider-prev">«</button>

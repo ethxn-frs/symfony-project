@@ -2,10 +2,10 @@
 
 namespace App\Entity;
 
-use App\Repository\ResponseRepository;
+use App\Repository\AnswerRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: ResponseRepository::class)]
+#[ORM\Entity(repositoryClass: AnswerRepository::class)]
 class Answer
 {
     #[ORM\Id]
@@ -20,9 +20,24 @@ class Answer
     #[ORM\Column(length: 255)]
     private ?string $text = null;
 
+    #[ORM\Column(nullable: true)]
+    private ?int $nbVotes = null;
+
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function getNbVotes(): ?int
+    {
+        return $this->nbVotes;
+    }
+
+    public function setNbVotes(?int $nbVotes): self
+    {
+        $this->nbVotes = $nbVotes;
+
+        return $this;
     }
 
     public function getSurvey(): ?Survey
