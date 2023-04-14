@@ -19,7 +19,7 @@ class Survey
     private ?string $question = null;
 
     #[ORM\Column]
-    private ?bool $status = null;
+    private ?bool $status = false;
 
     #[ORM\OneToMany(mappedBy: 'survey', targetEntity: Answer::class, cascade: ['persist','remove'])]
     private Collection $answers;

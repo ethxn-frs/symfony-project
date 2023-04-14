@@ -8,6 +8,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -29,16 +30,10 @@ class SurveyType extends AbstractType
                 'allow_delete' => true,
                 'by_reference' => false,
             ])
-            ->add('status', IntegerType::class, [
-                'data' => 0, // Définit la valeur par défaut à 0
-                'disabled' => true, // Désactive le champ pour modification
-                'attr' => [
-                    'style' => 'display:none;', // Masque l'affichage du champ
-                ],
-                'label_attr' => [
-                    'style' => 'display:none;', // Masque l'affichage du libellé
-                ],
-            ])     
+            ->add('status', CheckboxType::class, [
+                'label' => "Actif",
+                'required' => false,
+            ])
         ;
     }
 
