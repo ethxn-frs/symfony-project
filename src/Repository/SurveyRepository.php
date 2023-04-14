@@ -21,10 +21,20 @@ class SurveyRepository extends ServiceEntityRepository
         parent::__construct($registry, Survey::class);
     }
 
-    public function save(Survey $entity, bool $flush = false): void
+    public function save(Survey $entity,bool $flush = false): void
     {
-        $this->getEntityManager()->persist($entity);
+        if ($entity->getStatus() == 1)
+        {
+            $oldSurvey = $this->findBy(array('status'=> '1'));
+            foreach($oldSurvey as $item)
+            if($item->getId() != $entity->getId())
+            {
+                $item->setStatus(false);
+            }
+        }
 
+        $this->getEntityManager()->persist($entity);        
+        
         if ($flush) {
             $this->getEntityManager()->flush();
         }
