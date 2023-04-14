@@ -23,8 +23,8 @@
             <h4>Inscrivez-vous aux offres</h4>
             <p>Reçevez un email à chaque nouvelle offre sur le site internet.</p>
             <div class="d-flex">
-              <form action="" method="post">
-                <input type="text" placeholder="Saisissez-votre email" class="t-center">
+              <form action="newsletter" method="get">
+                <input name="email" type="text" placeholder="Saisissez-votre email" class="t-center">
                 <input type="submit" value="S'inscrire">
               </form>
             </div>
