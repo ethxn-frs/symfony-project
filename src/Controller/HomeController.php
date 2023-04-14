@@ -23,7 +23,6 @@ class HomeController extends AbstractController
     public function index(ContentRepository $contentRepository, OfferRepository $offerRepository, PartnershipRepository $partnerRepository, SurveyRepository $surveyRepository, AnswerRepository $answerRepository) : Response
     {
         return $this->render('home/index.html.twig', [
-            'controller_name' => 'HomeController',
             'presentation' => $contentRepository-> findBy(array('page' => 'HomePage', 'section' => "presentation" )),
             'ponctualOffers' => $offerRepository-> findBy(array('status' => '2')),
             'perpetualsOffers' => $offerRepository-> findBy(array('status' => '1')),
