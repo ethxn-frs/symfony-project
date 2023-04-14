@@ -18,7 +18,6 @@ class AboutController extends AbstractController
     $memberRepository, ActivityRepository $activityRepository): Response
     {
         return $this->render('about/index.html.twig', [
-            'controller_name' => 'AboutController',
             'reglements' => $contentRepository-> findBy(array('page' => "AboutPage", 'section' => 'Reglement' )),
             'members' => $memberRepository->findAll(),
             'activities' => $activityRepository->findAll()
