@@ -23,7 +23,7 @@ class SurveyRepository extends ServiceEntityRepository
 
     public function save(Survey $entity,bool $flush = false): void
     {
-        if ($entity->getStatus() == 1)
+        if ($entity->getStatus() === 1)
         {
             $oldSurvey = $this->findBy(array('status'=> '1'));
             foreach($oldSurvey as $item)
