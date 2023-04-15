@@ -314,6 +314,14 @@ h3 {
   border-bottom: 1px solid #fff;
   transition: 400ms;
 }
+
+footer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
 footer h3 {
   font-size: 20px;
   margin-bottom: 18px;
